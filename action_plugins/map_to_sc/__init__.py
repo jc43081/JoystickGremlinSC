@@ -418,10 +418,17 @@ class MapToSc(gremlin.base_profile.AbstractAction):
         self.settings = parent.get_settings()
         self.description = ""
 
-        reader = mapping_reader.ControlsMappingReader(self.settings.sc_controls_mapping)
-        self.controls_list = reader.getControlsMapping()
-        el = gremlin.event_handler.EventListener()
-        el.controls_mapping_changed.connect(self._reload_control_list)
+
+        if self.settings.sc_controls_mapping == None:
+            util.display_error("To use the 'Map to Star Citizen' plugin, go to Settings and add a valid Controls Mapping.")
+            raise error.GremlinError(
+                        "Controls Mapping not available. Map to SC plugin unable to be used. "
+            )
+        else:
+            reader = mapping_reader.ControlsMappingReader(self.settings.sc_controls_mapping)
+            self.controls_list = reader.getControlsMapping()
+            el = gremlin.event_handler.EventListener()
+            el.controls_mapping_changed.connect(self._reload_control_list)
 
     def _reload_control_list(self, controls_mapping):
         reader = mapping_reader.ControlsMappingReader(controls_mapping)
@@ -530,7 +537,7 @@ class MapToSc(gremlin.base_profile.AbstractAction):
         :return True if the action is configured correctly, False otherwise
         """
         gremlin.util.log("MapToSC::is valid " + time.strftime("%a, %d %b %Y %H:%M:%S"))
-        return not(self.category_id is None or self.control_id is None)              
+        return not(self.category_id is None or self.control_id is None or len(self.controls_list) == 0)
 
 
 class ScControlsSelector(QtWidgets.QWidget):

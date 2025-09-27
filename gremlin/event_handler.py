@@ -250,14 +250,20 @@ class EventListener(QtCore.QObject):
     # occurs on broadcast mode change
     broadcast_changed = QtCore.Signal(StateChangeEvent)
 
+    # occurs on mode edit/update/delete of modes (edit time only)
+    #edit_mode_changed = QtCore.Signal(str) # param: the mode that was changed to
+    #mode_name_changed = QtCore.Signal(str, str) # runs when a mode name change occurs for the UI to update - param (old name, new name)
+    #mode_list_update = QtCore.Signal() # runs when mode lists changes
+    #profile_modes_changed = QtCore.Signal() # occurs when the hierarchy, or list of modes changed for a given profile (mode added, removed, changed or renamed)
+    #execution_context_changed = QtCore.Signal() # occurs when execution context changes
+    #runtime_mode_changed = QtCore.Signal(str) # runs when the runtime profile mode changes (runtime mode only, when a profile has been started) - param - the mode changed to
+    modes_changed = QtCore.Signal() # runs when a mode has been changed
+
     # occurs when a new controls mapping is defined
     controls_mapping_changed = QtCore.Signal(str)
 
     # occurs when a profile needs reload
     reload_profile = QtCore.Signal(str)
-
-    # occurs on mode edit/update/delete
-    modes_changed = QtCore.Signal()
 
     # functor enable flag changed
     action_created = QtCore.Signal(object) # runs when an action is created

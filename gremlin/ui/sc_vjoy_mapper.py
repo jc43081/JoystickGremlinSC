@@ -50,8 +50,15 @@ class ScVjoyMapperUI(gremlin.ui.ui_common.BaseDialogUi):
 
         self.main_layout = QtWidgets.QVBoxLayout(self)
 
+        # Put the instructions on how to use
+        instruction_layout = QtWidgets.QVBoxLayout()
+        instruction_layout.addWidget(QtWidgets.QLabel("<b>Instructions:<b>\n"))
+        instruction_layout.addWidget(QtWidgets.QLabel("   1. Retrieve the current vJoy order in SC (see the Renumbering VJoy article on Nexus).\n"))
+        instruction_layout.addWidget(QtWidgets.QLabel("   2. In SC, return to the Main Menu. (if not, the Control Profile will not refresh).\n"))
+        instruction_layout.addWidget(QtWidgets.QLabel("   3. Enter the order in vJoy Order field below:\n"))
+
         # Get the desired order of vJoy to use as a base
-        vjoy_ordering_labels = QtWidgets.QLabel("vJoy Order:")
+        vjoy_ordering_labels = QtWidgets.QLabel("     vJoy Order:")
         vjoy_ordering_edit = QtWidgets.QHBoxLayout()
         self.vjoy_ordering_textbox = QtWidgets.QLineEdit()
         self.vjoy_ordering_textbox.setText(self.vjoy_ordering)
@@ -62,10 +69,12 @@ class ScVjoyMapperUI(gremlin.ui.ui_common.BaseDialogUi):
 
         vjoy_ordering_layout = QtWidgets.QFormLayout()
         vjoy_ordering_layout.addRow(vjoy_ordering_labels, vjoy_ordering_edit)
-        self.main_layout.addLayout(vjoy_ordering_layout)
+        instruction_layout.addLayout(vjoy_ordering_layout)
+
+        instruction_layout.addWidget(QtWidgets.QLabel("   4. Download the appropriate Control Profile file from Nexus that matches your SC version.\n"))
 
         # Get the Control Profile to use as a base
-        control_profile_labels = QtWidgets.QLabel("Base Control Profile:")
+        control_profile_labels = QtWidgets.QLabel("     Base Control Profile:")
         self.control_profile_textbox = QtWidgets.QLineEdit()
         self.control_profile_textbox.setText(self.base_control_profile)
         self.control_profile_textbox.textEdited.connect(self._update_control_profile)
@@ -77,10 +86,12 @@ class ScVjoyMapperUI(gremlin.ui.ui_common.BaseDialogUi):
         control_profile_layout.addRow(control_profile_labels, self.control_profile_textbox)
         control_profile_layout.addWidget(control_profile_button)
         #control_profile_layout.addStretch()
-        self.main_layout.addLayout(control_profile_layout)
+        instruction_layout.addLayout(control_profile_layout)
+
+        instruction_layout.addWidget(QtWidgets.QLabel("   5. Select the location of your Star Citizen install (select LIVE, PTU, ETU to indicate environment).\n"))
 
         # Get the current location of the Star Citizen folder
-        sc_installation_labels = QtWidgets.QLabel("Star Citizen Installation:")
+        sc_installation_labels = QtWidgets.QLabel("     Star Citizen Installation:")
         self.sc_installation_textbox = QtWidgets.QLineEdit()
         self.sc_installation_textbox.setText(self.sc_installation)
         self.sc_installation_textbox.textEdited.connect(self._update_sc_installation)        
@@ -92,19 +103,13 @@ class ScVjoyMapperUI(gremlin.ui.ui_common.BaseDialogUi):
         sc_installation_layout = QtWidgets.QFormLayout()
         sc_installation_layout.addRow(sc_installation_labels, self.sc_installation_textbox)
         sc_installation_layout.addWidget(sc_installation_button)
-        self.main_layout.addLayout(sc_installation_layout)
+        instruction_layout.addLayout(sc_installation_layout)
 
-        # Put the instructions on how to use
-        instruction_layout = QtWidgets.QVBoxLayout()
-        instruction_layout.addWidget(QtWidgets.QLabel("<b>Instructions:<b>\n"))
-        instruction_layout.addWidget(QtWidgets.QLabel("   1. Retrieve the current vJoy order in SC (Use vJoyCheck profile found on Nexus).\n"))
-        instruction_layout.addWidget(QtWidgets.QLabel("   2. In SC, return to the Main Menu. (if not, the Control Profile will not refresh).\n"))
-        instruction_layout.addWidget(QtWidgets.QLabel("   3. Enter the order in vJoy Order field above.\n"))
-        instruction_layout.addWidget(QtWidgets.QLabel("   4. Select the downloaded Control Profile file to use (match your SC version).\n"))
-        instruction_layout.addWidget(QtWidgets.QLabel("   5. Select the location of your Star Citizen install (select LIVE, PTU, ETU to indicate environment).\n"))
-        instruction_button = QtWidgets.QPushButton("5. Click HERE to run Mapper")
+             
+        instruction_button = QtWidgets.QPushButton("6. Click HERE to run Mapper")
         instruction_button.clicked.connect(self._run_sc_mapper)
         instruction_layout.addWidget(instruction_button)
+        instruction_layout.addWidget(QtWidgets.QLabel("WARNING: 4.0.x fails to import MFD bindings through the UI.\nUse the following command (press `) to import: 'pp_RebindKeys layout_JG_StarCitizenMapping_4-0-x_layout'\n"))
         self.main_layout.addLayout(instruction_layout)
 
 
@@ -156,7 +161,7 @@ class ScVjoyMapperUI(gremlin.ui.ui_common.BaseDialogUi):
             return
         
         if os.path.exists(self.sc_installation+"\\StarCitizen_Launcher.exe") == False:
-            gremlin.util.display_error("Star Citizen Installation folder is not correct. Please pick the correct location")
+            gremlin.util.display_error("Star Citizen Installation folder is not correct. Please pick the correct location.")
             return
         
         try:

@@ -986,9 +986,10 @@ def _inheritance_tree_to_labels(labels, tree, level):
         _inheritance_tree_to_labels(labels, children, level+1)
 
 def get_mode_list(profile_data):
+    ''' gets a pairs (display_name, mode) '''
     profile = profile_data
     mode_list = []
-
+    modes = gremlin.shared_state.current_profile.get_modes()
     # Create mode name labels visualizing the tree structure
     inheritance_tree = profile.build_inheritance_tree()
     labels = []
@@ -996,27 +997,13 @@ def get_mode_list(profile_data):
 
     # Filter the mode names such that they only occur once below
     # their correct parent
-    mode_names = []
-    display_names = []
-    for entry in labels:
-        if entry[0] in mode_names:
-            idx = mode_names.index(entry[0])
-            if len(entry[1]) > len(display_names[idx]):
-                del mode_names[idx]
-                del display_names[idx]
-                mode_names.append(entry[0])
-                display_names.append(entry[1])
-        else:
-            mode_names.append(entry[0])
-            display_names.append(entry[1])
+    mode_names = [n[0] for n in labels]
+    display_names = [n[1] for n in labels]
 
-    # Add properly arranged mode names to the drop down list
     for display_name, mode_name in zip(display_names, mode_names):
         mode_list.append((display_name, mode_name))
 
-
     return mode_list
-
 
 
 class ModeWidget(QtWidgets.QWidget):
@@ -1024,7 +1011,7 @@ class ModeWidget(QtWidgets.QWidget):
     """Displays the ui for mode selection and management of a device."""
 
     # Signal emitted when the mode changes
-    mode_widget_changed = QtCore.Signal(str) # when the edit mode changes
+    edit_mode_changed = QtCore.Signal(str) # when the edit mode changes
     
 
     def __init__(self, parent=None):
@@ -1040,6 +1027,8 @@ class ModeWidget(QtWidgets.QWidget):
         self.main_layout = QtWidgets.QHBoxLayout(self)
         self._create_widget()
 
+        #el = gremlin.event_handler.EventListener()
+       # el.mode_list_update.connect(self._mode_list_update)
 
     def setRuntimeDisabled(self, value):
         ''' enables or disables profile runtime behavior'''
@@ -1064,8 +1053,31 @@ class ModeWidget(QtWidgets.QWidget):
     def _profile_stop_cb(self):
         self.setEnabled(True)
 
+    @QtCore.Slot()
+    def _mode_list_update(self):
+        ''' occurs when mode list may have changed '''
+        profile = gremlin.shared_state.current_profile
+        mode = gremlin.shared_state.current_mode
+        self.populate_selector(profile, mode)
+        self.select_mode(mode)
 
-    def populate_selector(self, profile_data, current_mode=None, emit = False):
+
+    def select_mode(self, mode: str):
+        ''' selects the mode without firing a change event - ignored if the mode doesn't exist '''
+        # syslog = logging.getLogger("system")
+        logging.getLogger("system").info(f"Mode: set edit selector mode to [{mode}]")
+        index =  self.edit_mode_selector.findData(mode)
+        if index >= 0:
+            logging.getLogger("system").info(f"Mode: mode exists")
+            with QtCore.QSignalBlocker(self.edit_mode_selector):
+                self.edit_mode_selector.setCurrentIndex(index)
+        else:
+            # not found, update the selector
+            logging.getLogger("system").info(f"Mode: mode does not exist, repopulating")
+            self.populate_selector(gremlin.shared_state.current_profile, mode)
+
+
+    def populate_selector(self, profile, mode_to_select : str = None, emit : bool = False):
         """Adds entries for every mode present in the profile.
 
         :param profile_data the device for which the mode selection is generated
@@ -1074,54 +1086,37 @@ class ModeWidget(QtWidgets.QWidget):
         # To prevent emitting lots of change events the slot is first
         # disconnected and then at the end reconnected again.
         with QtCore.QSignalBlocker(self.edit_mode_selector):
-            self.profile = profile_data
+            self.profile = profile
 
-            # Remove all existing items in QT6 clear() doesn't always work
-            #self.edit_mode_selector.clear()
+            modes = gremlin.shared_state.current_profile.get_modes()
             while self.edit_mode_selector.count() > 0:
                     self.edit_mode_selector.removeItem(0)
-            
-            mode_list = get_mode_list(profile_data)
-            self.mode_list = [x[1] for x in mode_list]
-            # Create mode name labels visualizing the tree structure
-            inheritance_tree = self.profile.build_inheritance_tree()
-            labels = []
-            _inheritance_tree_to_labels(labels, inheritance_tree, 0)
 
-            # Filter the mode names such that they only occur once below
-            # their correct parent
-            mode_names = []
-            display_names = []
-            for entry in labels:
-                if entry[0] in mode_names:
-                    idx = mode_names.index(entry[0])
-                    if len(entry[1]) > len(display_names[idx]):
-                        del mode_names[idx]
-                        del display_names[idx]
-                        mode_names.append(entry[0])
-                        display_names.append(entry[1])
-                else:
-                    mode_names.append(entry[0])
-                    display_names.append(entry[1])
-
-            # # Select currently active mode
-            # if len(mode_names) > 0:
-            #     if current_mode is None or current_mode not in self.mode_list:
-            #         # pick the first one
-            #         current_mode = mode_names[0]
+            mode_list_pairs = get_mode_list(profile)
+            self.mode_list = [x[1] for x in mode_list_pairs]
 
             # Add properly arranged mode names to the drop down list
             index = 0
             current_index = 0
+            select_index = None
             last_edit_mode = gremlin.config.Configuration().get_profile_last_edit_mode()
-            for display_name, mode_name in zip(display_names, mode_names):
+
+            if not last_edit_mode in modes:
+                last_edit_mode = gremlin.shared_state.current_profile.get_default_mode()
+
+            for display_name, mode_name in mode_list_pairs:
                 self.edit_mode_selector.addItem(display_name, mode_name)
-                self.mode_list.append(mode_name)
+                # self.mode_list.append(mode_name)
+                if mode_to_select and select_index is None and mode_to_select == mode_name:
+                    select_index = index
                 if mode_name == last_edit_mode:
                     current_index = index
                 index += 1
 
-            self.edit_mode_selector.setCurrentIndex(current_index)
+            if select_index:
+                self.edit_mode_selector.setCurrentIndex(select_index)    
+            else:
+                self.edit_mode_selector.setCurrentIndex(current_index)
             if emit:
                 self._edit_mode_changed_cb(current_index)
 
@@ -1132,9 +1127,11 @@ class ModeWidget(QtWidgets.QWidget):
 
         :param idx id of the now selected entry
         """
-        # save the setup
+        # tell the UI about the mode change
         new_mode = self.mode_list[idx]
-        self.mode_widget_changed.emit(new_mode)
+        # syslog = logging.getLogger("system")
+        logging.getLogger("system").info(f"Mode: edit selector request change to [{new_mode}]")
+        self.edit_mode_changed.emit(new_mode)
 
 
     def _create_widget(self):
@@ -1185,17 +1182,29 @@ class ModeWidget(QtWidgets.QWidget):
 
     def _manage_modes_cb(self):
         ''' calls up the mode change dialog '''
+        if not self.profile.profile_file or not os.path.isfile(self.profile.profile_file):
+            MessageBox(prompt = "Please save the profile before configuring modes.")
+            return
+
         import gremlin.shared_state
         ui = gremlin.shared_state.ui
         ui.manage_modes()
 
     def _profile_options_cb(self):
         import gremlin.ui.dialogs
+        if not self.profile.profile_file or not os.path.isfile(self.profile.profile_file):
+            gremlin.ui.ui_common.MessageBox(prompt = "Please save the profile before setting options.")
+            return
+
         dialog = gremlin.ui.dialogs.ProfileOptionsUi()
         dialog.exec()
 
     def currentIndex(self):
         return self.edit_mode_selector.currentIndex()
+    
+    def currentMode(self) -> str:
+        ''' gets the current mode '''
+        return self.edit_mode_selector.currentData()    
     
     def setCurrentIndex(self, index):
         self.edit_mode_selector.setCurrentIndex(index)
