@@ -79,7 +79,7 @@ install_path = os.path.normcase(os.path.dirname(os.path.abspath(sys.argv[0])))
 os.chdir(install_path)
 
 APPLICATION_NAME = "Joystick Gremlin SC"
-APPLICATION_VERSION = "13.40.14-sc.1"
+APPLICATION_VERSION = "13.40.14-sc.2"
 
 from gremlin.singleton_decorator import SingletonDecorator
 
@@ -121,7 +121,8 @@ class GremlinUi(QtWidgets.QMainWindow):
         # list of detected devices
         self._active_devices = []
 
-
+        # prevent saving anything until we have a profile loaded
+        el = gremlin.event_handler.EventListener()
 
         # Process monitor
         self.process_monitor = gremlin.process_monitor.ProcessMonitor()
@@ -136,17 +137,17 @@ class GremlinUi(QtWidgets.QMainWindow):
             [],
             self._update_statusbar_repeater
         )
-                
+
+        self._status_bar_last_runtime_mode = None
+        self._status_bar_last_edit_mode = None
         eh = gremlin.event_handler.EventHandler()
         eh.mode_changed.connect(self._update_mode_change)
         eh.mode_status_update.connect(self._update_mode_status_bar)
 
-
-
         self.tab_guids = []
 
         self.mode_selector = gremlin.ui.ui_common.ModeWidget()
-        self.mode_selector.mode_widget_changed.connect(self._edit_mode_changed_cb)
+        self.mode_selector.edit_mode_changed.connect(self._edit_mode_selector_changed)
         self.mode_selector.setRuntimeDisabled(True)
 
         self.ui.toolBar.addWidget(self.mode_selector)
@@ -495,16 +496,11 @@ class GremlinUi(QtWidgets.QMainWindow):
 
     def manage_modes(self):
         """Opens the mode management window."""
-        self.modal_windows["mode_manager"] = \
-            gremlin.ui.dialogs.ModeManagerUi(self.profile)
-        el = gremlin.event_handler.EventListener()
-        # el.modes_changed.connect(
-        #     self._mode_configuration_changed
-        # )
-        self.modal_windows["mode_manager"].show()
-        self.modal_windows["mode_manager"].closed.connect(
-            lambda: self._remove_modal_window("mode_manager")
-        )
+        dialog = gremlin.ui.dialogs.ModeManagerUi(self.profile)
+        self.modal_windows["mode_manager"] = dialog
+        dialog.setWindowModality(QtCore.Qt.ApplicationModal)
+        dialog.closed.connect(lambda: self._remove_modal_window("mode_manager"))
+        dialog.show()
 
     def merge_axis(self):
         """Opens the modal window to define axis merging."""
@@ -798,6 +794,10 @@ class GremlinUi(QtWidgets.QMainWindow):
 
         self.profile = gremlin.base_profile.Profile()
 
+        # default active mode
+        gremlin.shared_state.runtime_mode = "Default"
+        gremlin.shared_state.edit_mode = "Default"
+
         # For each connected device create a new empty device entry
         # in the new profile
         for device in gremlin.joystick_handling.physical_devices():
@@ -812,20 +812,20 @@ class GremlinUi(QtWidgets.QMainWindow):
 
         # Update profile information
         self._profile_fname = None
-        self._current_mode = None
         self._update_window_title()
         gremlin.shared_state.current_profile = self.profile
+
+        # reset modes
+        current_mode = gremlin.shared_state.current_mode
+        self.mode_selector.populate_selector(self.profile, current_mode, emit = False)
 
         # Create a default mode
         for device in self.profile.devices.values():
             device.ensure_mode_exists("Default")
-        self._current_mode = "Default"
 
         # Create device tabs
         self._create_tabs()
 
-        # Update everything to the new mode
-        self._mode_configuration_changed(self._current_mode)
 
     def save_profile(self):
         """Saves the current profile to the hard drive.
@@ -933,14 +933,14 @@ class GremlinUi(QtWidgets.QMainWindow):
 
     def _create_statusbar(self):
         """Creates the ui widgets used in the status bar."""
-        self.status_bar_mode = QtWidgets.QLabel("")
-        self.status_bar_mode.setContentsMargins(5, 0, 5, 0)
+        self.status_bar_mode_widget = QtWidgets.QLabel("")
+        self.status_bar_mode_widget.setContentsMargins(5, 0, 5, 0)
         self.status_bar_is_active = QtWidgets.QLabel("")
         self.status_bar_is_active.setContentsMargins(5, 0, 5, 0)
         self.status_bar_repeater = QtWidgets.QLabel("")
         self.status_bar_repeater.setContentsMargins(5, 0, 5, 0)
         self.ui.statusbar.addWidget(self.status_bar_is_active, 0)
-        self.ui.statusbar.addWidget(self.status_bar_mode, 3)
+        self.ui.statusbar.addWidget(self.status_bar_mode_widget, 3)
         self.ui.statusbar.addWidget(self.status_bar_repeater, 1)
 
     def _create_system_tray(self):
@@ -1682,17 +1682,26 @@ class GremlinUi(QtWidgets.QMainWindow):
         # persist tab order
         self.config.tab_list = self._get_tab_map()
 
-
-    def _edit_mode_changed_cb(self, new_mode):
+    
+    def _edit_mode_selector_changed(self, new_mode):
         """Updates the current mode to the provided one.
 
         :param new_mode the name of the new current mode
         """
-
         # refresh the modes
         eh = gremlin.event_handler.EventHandler()
-        eh.change_mode(new_mode)
-    
+        eh.change_mode(new_mode, force_update = True)
+
+    def _get_process_mode(self, process_path):
+        # syslog = logging.getLogger("system")
+        if process_path in self._process_runtime_map:
+            mode = self._process_runtime_map[process_path]
+            syslog.info(f"PROC MODE: using last mode [{mode}] for process {process_path}")
+        else:
+            mode = self.profile.get_last_runtime_mode()
+            syslog.info(f"PROC MODE: using last saved profile mode mode [{mode}]")
+        return mode
+
 
     def _process_changed_cb(self, path):
         """Handles changes in the active process.
@@ -1788,20 +1797,34 @@ class GremlinUi(QtWidgets.QMainWindow):
     def _update_mode_status_bar(self):
         ''' updates the mode status bar with current runtime and edit modes '''
         try:
-            
+
             is_running = gremlin.shared_state.is_running
             runtime_mode = gremlin.shared_state.runtime_mode
+
+            # syslog = logging.getLogger("system")
+
             edit_mode = gremlin.shared_state.edit_mode
+            if not edit_mode:
+                # get it from the mode drop down
+                edit_mode = self.mode_selector.currentMode()
 
-            msg = f"<b>Runtime Mode:</b> {runtime_mode if runtime_mode else "n/a"}"
             if not is_running:
-                msg += f" <b>Edit Mode:</b> {edit_mode if edit_mode else "n/a"}"
+                msg = f" <b>Edit Mode:</b> {edit_mode if edit_mode else "n/a"}"
+                if self._status_bar_last_edit_mode != edit_mode:
+                    syslog.info(f"Mode: New edit mode: [{edit_mode}] (last mode [{self._status_bar_last_edit_mode}])")
+                    self._status_bar_last_edit_mode = edit_mode
 
-            self.status_bar_mode.setText(msg)
+            else:
+                msg = f"<b>Runtime Mode:</b> {runtime_mode if runtime_mode else "n/a"}"
+                if self._status_bar_last_runtime_mode != runtime_mode:
+                    syslog.info(f"Mode: New runtime mode: [{runtime_mode}] (last mode [{self._status_bar_last_runtime_mode}])")
+                    self._status_bar_last_runtime_mode = runtime_mode
+
+            self.status_bar_mode_widget.setText(msg)
             if self.config.mode_change_message:
                 self.ui.tray_icon.showMessage(f"Runtime Mode: {runtime_mode if runtime_mode else "n/a"} Edit mode: {edit_mode if edit_mode else "n/a"}","",QtWidgets.QSystemTrayIcon.MessageIcon.NoIcon,250)
         except Exception as err:
-            log_sys_error(f"Unable to update status bar mode:\n{err}")
+            syslog.error(f"Unable to update status bar mode:\n{err}")
 
 
     def _update_ui_mode(self, new_mode):
@@ -1996,23 +2019,26 @@ class GremlinUi(QtWidgets.QMainWindow):
                 # pick the top mode if nothing was saved in the configuration
                 last_edit_mode = self.profile.get_root_mode()
                 gremlin.config.Configuration().set_profile_last_edit_mode(last_edit_mode)
+            
+            modes = new_profile.get_modes()
+            if last_edit_mode is None:
+                last_edit_mode = modes[0]
 
-            last_runtime_mode = gremlin.config.Configuration().get_profile_last_runtime_mode()
-            if not last_runtime_mode:
-                last_runtime_mode = self.profile.get_root_mode()
-                gremlin.config.Configuration().set_profile_last_runtime_mode(last_runtime_mode)
+            if not last_edit_mode in modes:
+                # no longer in the current mode list
+                last_edit_mode = new_profile.get_default_mode()
 
 
             eh = gremlin.event_handler.EventHandler()
-            eh.set_runtime_mode(last_runtime_mode)
             eh.set_edit_mode(last_edit_mode)
-            
-            current_mode = gremlin.shared_state.current_mode
+
+            gremlin.shared_state.edit_mode = last_edit_mode
+
             
             self._create_tabs()
 
             # Make the first root node the default active mode
-            self.mode_selector.populate_selector(new_profile, current_mode, emit = True)
+            self.mode_selector.populate_selector(new_profile, last_edit_mode, emit = True)
 
             # Save the profile at this point if it was converted from a prior
             # profile version, as otherwise the change detection logic will
@@ -2121,17 +2147,33 @@ class GremlinUi(QtWidgets.QMainWindow):
         :return name of the mode that was the last to be active, or the
             first top level mode if none was ever used before
         """
-        last_mode = self.config.get_profile_last_runtime_mode()
-        mode_list = gremlin.profile.mode_list(self.profile)
+        config = gremlin.config.Configuration()
+        option_restore_mode = config.restore_profile_mode_on_start or gremlin.shared_state.current_profile.get_restore_mode()
+        # syslog = logging.getLogger("system")
+        syslog.info(f"RUNTIME MODE: Runtime mode determination for profile [{self.profile.name}]")
 
-        if last_mode in mode_list:
-            # mode exists
-            return last_mode
+        if option_restore_mode:
+            syslog.info("\tAutomatic restore runtime mode is activated")
+            key = self.profile.profile_file
+            if key in self._runtime_mode_map:
+                last_mode = self._runtime_mode_map[key]
+                syslog.info(f"\tusing cached runtime mode [{last_mode}]")
+            else:
+                last_mode = self.profile.get_last_runtime_mode()
+                syslog.info(f"\tusing profile saved last runtime mode [{last_mode}]")
+
         else:
-            # pick a new last mode and remember it
-            last_mode = self.profile.get_root_mode()
-            self.config.set_profile_last_runtime_mode(last_mode)
-            return last_mode
+            last_mode = self.profile.get_default_mode()
+            syslog.info(f"\tusing profile default start mode [{last_mode}]")
+        
+        mode_list = gremlin.profile.mode_list()
+
+        if not last_mode in mode_list:
+            syslog.info(f"\tMode {last_mode} not found")
+            default_mode = self.profile.get_root_mode()
+            syslog.info(f"\tMode {last_mode} not found - using [{default_mode}]")
+
+        return last_mode
         
     
 
@@ -2148,14 +2190,45 @@ class GremlinUi(QtWidgets.QMainWindow):
         self._do_load_profile(fname)
         self._create_recent_profiles()
 
+
+    @QtCore.Slot(str, str)
+    def _mode_name_changed(self, old_mode:str, new_mode:str):
+        self._update_mode_status_bar()        
+
+    def _edit_mode_changed(self, mode : str):
+        ''' called when mode list has changed '''
+
+        # update the mode selector to the correct edit mode
+        self.mode_selector.select_mode(mode)
+        gremlin.event_handler.EventHandler().set_edit_mode(mode)
+        self._update_mode_status_bar()
+
+    def _runtime_mode_changed(self, mode : str):
+        ''' called when runtime mode changes '''
+
+        gremlin.shared_state.runtime_mode = mode
+        if self._active_process_path:
+            verbose = gremlin.config.Configuration().verbose_mode_process
+            # syslog = logging.getLogger("system")
+            
+            if verbose:
+                base_name = os.path.basename(self._active_process_path)
+                base_profile = os.path.basename(self.profile.profile_file)
+                syslog.info(f"PROC: save runtime mode process: [{base_name}] mode [{mode}] profile [{base_profile}]")
+            self._process_runtime_map[self._active_process_path] = mode
+            # save to JSON as well
+            self.profile.set_last_runtime_mode(mode)
+
+        self._update_mode_status_bar()
+
     def _modes_changed(self):
         ''' called when mode list has changed '''
         self.mode_selector.populate_selector(gremlin.shared_state.current_profile, gremlin.shared_state.current_mode)
         self._update_mode_status_bar()
-        
 
-    def _mode_configuration_changed(self, new_mode):
+    def _mode_configuration_changed(self, new_mode = None):
         """Updates the mode configuration of the selector and profile."""
+
         try:
             gremlin.util.pushCursor()
 

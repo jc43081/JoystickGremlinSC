@@ -1,9 +1,7 @@
-Joystick Gremlin SC - 13.40.14-sc.1
+Joystick Gremlin SC - 13.40.14-sc.2
 ================
 
-Joystick Gremlin SC is a customized version of Joystick Gremlin Ex. It is a trial version for mapping game controls directly within Joystick Gremlin and then providing associated mapping files for the game. In this case, the game is Star Citizen. If this version is heavily used (or there is desire expressed to support other games), the mapping functionality will be incorporated back into the Ex version for use by all. 
-
-In the meantime, this version will incorporate changes made to Ex as they are made and it is reasonable to do so. Therefore, it's versioning will continue to match, but it will be a separate install.
+Joystick Gremlin SC is a customized version of Joystick Gremlin Ex. It is a trial version for mapping game controls directly within Joystick Gremlin and then providing associated mapping files for the game. In this case, the game is Star Citizen. This version has incorporate changes made to Ex up to version 13.30.14ex (m22), but will not incorporate any additional versions. 
 
 SC Added Features
 -----------
@@ -15,7 +13,7 @@ SC Added Features
 - At initialization and changing of modes, refreshes each vJoy axis to match the current joystick values
 
 Current Support:
-- 3.24.2
+- 4.x.x
 
 <hr style="border:3px solid gray">
 
