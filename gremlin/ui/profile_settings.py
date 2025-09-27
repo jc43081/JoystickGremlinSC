@@ -189,7 +189,7 @@ class DefaultModeSelector(QtWidgets.QGroupBox):
 
         self.dropdown = QtWidgets.QComboBox()
         # self.dropdown.addItem("Use Heuristic")
-        for mode in gremlin.profile.mode_list(self.profile_data):
+        for mode in gremlin.profile.mode_list():
             self.dropdown.addItem(mode)
         start_mode = gremlin.shared_state.current_profile.get_start_mode()
         if start_mode:
@@ -204,10 +204,8 @@ class DefaultModeSelector(QtWidgets.QGroupBox):
 
         :param index the index of the entry selected
         """
-        if index == 0:
-            self.profile_data.startup_mode = None
-        else:
-            self.profile_data.startup_mode = self.dropdown.currentText()
+        mode = self.dropdown.currentText()
+        gremlin.shared_state.current_profile.set_start_mode(mode)
 
 
 class ControlsMapping(QtWidgets.QGroupBox):

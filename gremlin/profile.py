@@ -36,27 +36,16 @@ from gremlin.util import *
 from gremlin.input_types import InputType
 from . import error, joystick_handling
 
-def mode_list(node):
+
+def mode_list(profile = None):
     """Returns a list of all modes based on the given node.
 
     :param node a node from a profile tree
-    :return list of mode names
+    :return list of modes in the profile 
     """
-    # Get profile root node
     profile : gremlin.base_profile.Profile = gremlin.shared_state.current_profile
     mode_names = profile.mode_list().copy()
-
-    # parent = node
-    # while parent.parent is not None:
-    #     parent = parent.parent
-    # assert(type(parent) == gremlin.base_profile.Profile)
-    # # Generate list of modes
-    # mode_names = []
-    # for device in parent.devices.values():
-    #     mode_names.extend(device.modes.keys())
-
     return mode_names
-
 
 
 class ProfileConverter:
