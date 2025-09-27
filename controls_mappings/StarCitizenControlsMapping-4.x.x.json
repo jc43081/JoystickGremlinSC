@@ -58,7 +58,7 @@
                 "action": "v_toggle_scan_mode"
             },
             {
-                "name": "Toggle Quantum Travel System",
+                "name": "Toggle Quantum Mode",
                 "id": 35,
                 "type": "button",
                 "vjoy": 1,
@@ -121,7 +121,7 @@
                 "action": "v_set_scan_mode"
             },
             {
-                "name": "Set Quantum Travel System",
+                "name": "Set Quantum Mode",
                 "id": 70,
                 "type": "button",
                 "vjoy": 1,
@@ -327,6 +327,498 @@
         ]
     },
     {
+        "category_id": 18,
+        "name": "Vehicles - Multi Function Displays (MFDs)",
+        "values": [
+            {
+                "name": "MFD - Cycle Page - Forwards (short)",
+                "id": 10,
+                "type": "button",
+                "vjoy": 1,
+                "button": 36,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_interact_cycle_forwards_short"
+            },
+            {
+                "name": "MFD - Cycle Page - Forwards (long)",
+                "id": 11,
+                "type": "button",
+                "vjoy": 1,
+                "button": 37,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_interact_cycle_forwards_long"
+            },
+            {
+                "name": "MFD - Cycle Page - Backwards (short)",
+                "id": 15,
+                "type": "button",
+                "vjoy": 1,
+                "button": 38,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_interact_cycle_backwards_short"
+            },
+            {
+                "name": "MFD - Cycle Page - Backwards (long)",
+                "id": 16,
+                "type": "button",
+                "vjoy": 1,
+                "button": 39,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_interact_cycle_backwards_long"
+            },
+            {
+                "name": "MFD - Movement - Up (short)",
+                "id": 20,
+                "type": "button",
+                "vjoy": 1,
+                "button": 40,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_movement_up_short"
+            },
+            {
+                "name": "MFD - Movement - Up (long)",
+                "id": 21,
+                "type": "button",
+                "vjoy": 1,
+                "button": 41,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_movement_up_long"
+            },
+            {
+                "name": "MFD - Movement - Down (short)",
+                "id": 25,
+                "type": "button",
+                "vjoy": 1,
+                "button": 42,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_movement_down_short"
+            },
+            {
+                "name": "MFD - Movement - Down (long)",
+                "id": 26,
+                "type": "button",
+                "vjoy": 1,
+                "button": 43,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_movement_down_long"
+            },
+            {
+                "name": "MFD - Movement - Left (short)",
+                "id": 30,
+                "type": "button",
+                "vjoy": 1,
+                "button": 44,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_movement_left_short"
+            },
+            {
+                "name": "MFD - Movement - Left (long)",
+                "id": 31,
+                "type": "button",
+                "vjoy": 1,
+                "button": 45,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_movement_left_long"
+            },
+            {
+                "name": "MFD - Movement - Right (short)",
+                "id": 35,
+                "type": "button",
+                "vjoy": 1,
+                "button": 46,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_movement_right_short"
+            },
+            {
+                "name": "MFD - Movement - Right (long)",
+                "id": 36,
+                "type": "button",
+                "vjoy": 1,
+                "button": 47,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_movement_right_long"
+            },
+            {
+                "name": "MFD - Select - Primary (short)",
+                "id": 40,
+                "type": "button",
+                "vjoy": 1,
+                "button": 48,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_primary_short"
+            },
+            {
+                "name": "MFD - Select - Primary (long)",
+                "id": 41,
+                "type": "button",
+                "vjoy": 1,
+                "button": 49,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_primary_long"
+            },
+            {
+                "name": "MFD - Select - Left Cast (short)",
+                "id": 45,
+                "type": "button",
+                "vjoy": 1,
+                "button": 50,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_cast_left_short"
+            },
+            {
+                "name": "MFD - Select - Left Cast (long)",
+                "id": 46,
+                "type": "button",
+                "vjoy": 1,
+                "button": 51,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_cast_left_long"
+            },
+            {
+                "name": "MFD - Select - Right Cast (short)",
+                "id": 50,
+                "type": "button",
+                "vjoy": 1,
+                "button": 52,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_cast_right_short"
+            },
+            {
+                "name": "MFD - Select - Right Cast (long)",
+                "id": 51,
+                "type": "button",
+                "vjoy": 1,
+                "button": 53,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_cast_right_long"
+            },
+            {
+                "name": "MFD - Select - MFD 1 (short)",
+                "id": 55,
+                "type": "button",
+                "vjoy": 1,
+                "button": 54,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_1_short"
+            },
+            {
+                "name": "MFD - Select - MFD 1 (long)",
+                "id": 56,
+                "type": "button",
+                "vjoy": 1,
+                "button": 55,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_1_long"
+            },
+            {
+                "name": "MFD - Select - MFD 2 (short)",
+                "id": 60,
+                "type": "button",
+                "vjoy": 1,
+                "button": 56,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_2_short"
+            },
+            {
+                "name": "MFD - Select - MFD 2 (long)",
+                "id": 61,
+                "type": "button",
+                "vjoy": 1,
+                "button": 57,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_2_long"
+            },
+            {
+                "name": "MFD - Select - MFD 3 (short)",
+                "id": 65,
+                "type": "button",
+                "vjoy": 1,
+                "button": 58,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_3_short"
+            },
+            {
+                "name": "MFD - Select - MFD 3 (long)",
+                "id": 66,
+                "type": "button",
+                "vjoy": 1,
+                "button": 59,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_3_long"
+            },
+            {
+                "name": "MFD - Select - MFD 4 (short)",
+                "id": 70,
+                "type": "button",
+                "vjoy": 1,
+                "button": 60,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_4_short"
+            },
+            {
+                "name": "MFD - Select - MFD 4 (long)",
+                "id": 71,
+                "type": "button",
+                "vjoy": 1,
+                "button": 61,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_4_long"
+            },
+            {
+                "name": "MFD - Select - MFD 5 (short)",
+                "id": 75,
+                "type": "button",
+                "vjoy": 1,
+                "button": 62,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_5_short"
+            },
+            {
+                "name": "MFD - Select - MFD 5 (long)",
+                "id": 76,
+                "type": "button",
+                "vjoy": 1,
+                "button": 63,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_5_long"
+            },
+            {
+                "name": "MFD - Select - MFD 6 (short)",
+                "id": 80,
+                "type": "button",
+                "vjoy": 1,
+                "button": 64,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_6_short"
+            },
+            {
+                "name": "MFD - Select - MFD 6 (long)",
+                "id": 81,
+                "type": "button",
+                "vjoy": 1,
+                "button": 65,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_6_long"
+            },
+            {
+                "name": "MFD - Select - MFD 7 (short)",
+                "id": 85,
+                "type": "button",
+                "vjoy": 1,
+                "button": 66,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_7_short"
+            },
+            {
+                "name": "MFD - Select - MFD 7 (long)",
+                "id": 86,
+                "type": "button",
+                "vjoy": 1,
+                "button": 67,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_7_long"
+            },
+            {
+                "name": "MFD - Select - MFD 8 (short)",
+                "id": 90,
+                "type": "button",
+                "vjoy": 1,
+                "button": 68,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_8_short"
+            },
+            {
+                "name": "MFD - Select - MFD 8 (long)",
+                "id": 91,
+                "type": "button",
+                "vjoy": 1,
+                "button": 69,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_8_long"
+            },
+            {
+                "name": "MFD - Select - MFD 9 (short)",
+                "id": 95,
+                "type": "button",
+                "vjoy": 1,
+                "button": 70,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_9_short"
+            },
+            {
+                "name": "MFD - Select - MFD 9 (long)",
+                "id": 96,
+                "type": "button",
+                "vjoy": 1,
+                "button": 71,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_9_long"
+            },
+            {
+                "name": "MFD - Select - MFD 10 (short)",
+                "id": 100,
+                "type": "button",
+                "vjoy": 1,
+                "button": 72,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_10_short"
+            },
+            {
+                "name": "MFD - Select - MFD 10 (long)",
+                "id": 101,
+                "type": "button",
+                "vjoy": 1,
+                "button": 73,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_soft_select_mfd_10_long"
+            },
+            {
+                "name": "MFD - Set Page - Self Status (short)",
+                "id": 103,
+                "type": "button",
+                "vjoy": 1,
+                "button": 74,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_self_status_short"
+            },
+            {
+                "name": "MFD - Set Page - Self Status (long)",
+                "id": 104,
+                "type": "button",
+                "vjoy": 1,
+                "button": 75,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_self_status_long"
+            },
+            {
+                "name": "MFD - Set Page - Target Status (short)",
+                "id": 105,
+                "type": "button",
+                "vjoy": 1,
+                "button": 76,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_target_status_short"
+            },
+            {
+                "name": "MFD - Set Page - Target Status (long)",
+                "id": 106,
+                "type": "button",
+                "vjoy": 1,
+                "button": 77,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_target_status_long"
+            },
+            {
+                "name": "MFD - Set Page - Scanning (short)",
+                "id": 110,
+                "type": "button",
+                "vjoy": 1,
+                "button": 78,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_scanning_short"
+            },
+            {
+                "name": "MFD - Set Page - Scanning (long)",
+                "id": 111,
+                "type": "button",
+                "vjoy": 1,
+                "button": 79,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_scanning_long"
+            },
+            {
+                "name": "MFD - Set Page - Vehicle Config (short)",
+                "id": 115,
+                "type": "button",
+                "vjoy": 1,
+                "button": 80,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_configuration_short"
+            },
+            {
+                "name": "MFD - Set Page - Vehicle Config (long)",
+                "id": 116,
+                "type": "button",
+                "vjoy": 1,
+                "button": 81,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_configuration_long"
+            },
+            {
+                "name": "MFD - Set Page - Comms (short)",
+                "id": 120,
+                "type": "button",
+                "vjoy": 1,
+                "button": 82,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_comms_short"
+            },
+            {
+                "name": "MFD - Set Page - Comms (long)",
+                "id": 121,
+                "type": "button",
+                "vjoy": 1,
+                "button": 83,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_comms_long"
+            },
+            {
+                "name": "MFD - Set Page - IFCS (short)",
+                "id": 125,
+                "type": "button",
+                "vjoy": 1,
+                "button": 84,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_ifcs_short"
+            },
+            {
+                "name": "MFD - Set Page - IFCS (long)",
+                "id": 126,
+                "type": "button",
+                "vjoy": 1,
+                "button": 85,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_ifcs_long"
+            },
+            {
+                "name": "MFD - Set Page - Diagnostics (short)",
+                "id": 130,
+                "type": "button",
+                "vjoy": 1,
+                "button": 86,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_diagnostics_short"
+            },
+            {
+                "name": "MFD - Set Page - Diagnostics (long)",
+                "id": 131,
+                "type": "button",
+                "vjoy": 1,
+                "button": 87,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_diagnostics_long"
+            },
+            {
+                "name": "MFD - Set Page - Resource Network (short)",
+                "id": 135,
+                "type": "button",
+                "vjoy": 1,
+                "button": 88,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_resource_network_short"
+            },
+            {
+                "name": "MFD - Set Page - Resource Network (long)",
+                "id": 136,
+                "type": "button",
+                "vjoy": 1,
+                "button": 89,
+                "actionmap": "vehicle_mfd",
+                "action": "v_mfd_select_view_resource_network_long"
+            }
+        ]
+    },
+    {
         "category_id": 20,
         "name": "Vehicles - View",
         "values": [
@@ -335,7 +827,7 @@
                 "id": 10,
                 "type": "button",
                 "vjoy": 1,
-                "button": 36,
+                "button": 90,
                 "actionmap": "spaceship_view",
                 "action": "v_view_yaw_left"
             },
@@ -344,7 +836,7 @@
                 "id": 15,
                 "type": "button",
                 "vjoy": 1,
-                "button": 37,
+                "button": 91,
                 "actionmap": "spaceship_view",
                 "action": "v_view_yaw_right"
             },
@@ -362,7 +854,7 @@
                 "id": 25,
                 "type": "button",
                 "vjoy": 1,
-                "button": 38,
+                "button": 92,
                 "actionmap": "spaceship_view",
                 "action": "v_view_pitch_up"
             },
@@ -371,7 +863,7 @@
                 "id": 30,
                 "type": "button",
                 "vjoy": 1,
-                "button": 39,
+                "button": 93,
                 "actionmap": "spaceship_view",
                 "action": "v_view_pitch_down"
             },
@@ -389,7 +881,7 @@
                 "id": 40,
                 "type": "button",
                 "vjoy": 1,
-                "button": 40,
+                "button": 94,
                 "actionmap": "spaceship_view",
                 "action": "v_view_cycle_fwd"
             },
@@ -398,7 +890,7 @@
                 "id": 45,
                 "type": "button",
                 "vjoy": 1,
-                "button": 41,
+                "button": 95,
                 "actionmap": "spaceship_view",
                 "action": "v_view_mode"
             },
@@ -407,7 +899,7 @@
                 "id": 50,
                 "type": "button",
                 "vjoy": 1,
-                "button": 42,
+                "button": 96,
                 "actionmap": "spaceship_view",
                 "action": "v_view_zoom_in"
             },
@@ -416,7 +908,7 @@
                 "id": 55,
                 "type": "button",
                 "vjoy": 1,
-                "button": 43,
+                "button": 97,
                 "actionmap": "spaceship_view",
                 "action": "v_view_zoom_out"
             },
@@ -425,7 +917,7 @@
                 "id": 60,
                 "type": "button",
                 "vjoy": 1,
-                "button": 44,
+                "button": 98,
                 "actionmap": "spaceship_view",
                 "action": "v_view_freelook_mode"
             },
@@ -443,7 +935,7 @@
                 "id": 70,
                 "type": "button",
                 "vjoy": 1,
-                "button": 45,
+                "button": 99,
                 "actionmap": "spaceship_view",
                 "action": "v_view_dynamic_zoom_rel_in"
             },
@@ -452,7 +944,7 @@
                 "id": 75,
                 "type": "button",
                 "vjoy": 1,
-                "button": 46,
+                "button": 100,
                 "actionmap": "spaceship_view",
                 "action": "v_view_dynamic_zoom_rel_out"
             },
@@ -469,10 +961,46 @@
                 "name": "Dynamic Zoom Toggle (absolute)",
                 "id": 85,
                 "type": "button",
-                "vjoy": 1,
-                "button": 47,
+                "vjoy": 2,
+                "button": 1,
                 "actionmap": "spaceship_view",
                 "action": "v_view_dynamic_zoom_abs_toggle"
+            },
+            {
+                "name": "Precision Targeting - Enable (Hold)",
+                "id": 90,
+                "type": "button",
+                "vjoy": 2,
+                "button": 2,
+                "actionmap": "spaceship_view",
+                "action": "v_ads_hold"
+            },
+            {
+                "name": "Precision Targeting - Toggle",
+                "id": 95,
+                "type": "button",
+                "vjoy": 2,
+                "button": 3,
+                "actionmap": "spaceship_view",
+                "action": "v_ads_toggle"
+            },
+            {
+                "name": "Precision Targeting - Max Zoom (Hold)",
+                "id": 100,
+                "type": "button",
+                "vjoy": 2,
+                "button": 4,
+                "actionmap": "spaceship_view",
+                "action": "v_ads_stable_max_zoom_hold"
+            },
+            {
+                "name": "Precision Targeting - Toggle Camera Tracking",
+                "id": 105,
+                "type": "button",
+                "vjoy": 2,
+                "button": 5,
+                "actionmap": "spaceship_view",
+                "action": "v_ads_cycle_tracking"
             }
         ]
     },
@@ -484,8 +1012,8 @@
                 "name": "Pitch Up",
                 "id": 10,
                 "type": "button",
-                "vjoy": 1,
-                "button": 48,
+                "vjoy": 2,
+                "button": 6,
                 "actionmap": "spaceship_movement",
                 "action": "v_pitch_up"
             },
@@ -493,8 +1021,8 @@
                 "name": "Pitch Down",
                 "id": 15,
                 "type": "button",
-                "vjoy": 1,
-                "button": 49,
+                "vjoy": 2,
+                "button": 7,
                 "actionmap": "spaceship_movement",
                 "action": "v_pitch_down"
             },
@@ -511,8 +1039,8 @@
                 "name": "Yaw Left",
                 "id": 25,
                 "type": "button",
-                "vjoy": 1,
-                "button": 50,
+                "vjoy": 2,
+                "button": 8,
                 "actionmap": "spaceship_movement",
                 "action": "v_yaw_left"
             },
@@ -520,8 +1048,8 @@
                 "name": "Yaw Right",
                 "id": 30,
                 "type": "button",
-                "vjoy": 1,
-                "button": 51,
+                "vjoy": 2,
+                "button": 9,
                 "actionmap": "spaceship_movement",
                 "action": "v_yaw_right"
             },
@@ -538,8 +1066,8 @@
                 "name": "Roll Left",
                 "id": 40,
                 "type": "button",
-                "vjoy": 1,
-                "button": 52,
+                "vjoy": 2,
+                "button": 10,
                 "actionmap": "spaceship_movement",
                 "action": "v_roll_left"
             },
@@ -547,8 +1075,8 @@
                 "name": "Roll Right",
                 "id": 45,
                 "type": "button",
-                "vjoy": 1,
-                "button": 53,
+                "vjoy": 2,
+                "button": 11,
                 "actionmap": "spaceship_movement",
                 "action": "v_roll_right"
             },
@@ -565,8 +1093,8 @@
                 "name": "Swap Yaw/Roll",
                 "id": 55,
                 "type": "button",
-                "vjoy": 1,
-                "button": 54,
+                "vjoy": 2,
+                "button": 12,
                 "actionmap": "spaceship_movement",
                 "action": "v_toggle_yaw_roll_swap"
             },
@@ -574,8 +1102,8 @@
                 "name": "Strafe Up (absolute)",
                 "id": 60,
                 "type": "button",
-                "vjoy": 1,
-                "button": 55,
+                "vjoy": 2,
+                "button": 13,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_up"
             },
@@ -583,8 +1111,8 @@
                 "name": "Strafe Down (absolute)",
                 "id": 65,
                 "type": "button",
-                "vjoy": 1,
-                "button": 56,
+                "vjoy": 2,
+                "button": 14,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_down"
             },
@@ -601,8 +1129,8 @@
                 "name": "Strafe Left (absolute)",
                 "id": 75,
                 "type": "button",
-                "vjoy": 1,
-                "button": 57,
+                "vjoy": 2,
+                "button": 15,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_left"
             },
@@ -610,8 +1138,8 @@
                 "name": "Strafe Right (absolute)",
                 "id": 80,
                 "type": "button",
-                "vjoy": 1,
-                "button": 58,
+                "vjoy": 2,
+                "button": 16,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_right"
             },
@@ -628,8 +1156,8 @@
                 "name": "Throttle Forward/Backward Invert",
                 "id": 90,
                 "type": "button",
-                "vjoy": 1,
-                "button": 59,
+                "vjoy": 2,
+                "button": 17,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_longitudinal_invert"
             },
@@ -677,8 +1205,8 @@
                 "name": "Throttle - Increase",
                 "id": 115,
                 "type": "button",
-                "vjoy": 1,
-                "button": 60,
+                "vjoy": 2,
+                "button": 18,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_forward"
             },
@@ -686,8 +1214,8 @@
                 "name": "Throttle - Decrease",
                 "id": 120,
                 "type": "button",
-                "vjoy": 1,
-                "button": 61,
+                "vjoy": 2,
+                "button": 19,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_back"
             },
@@ -734,8 +1262,8 @@
                 "name": "Throttle - Cruise Mode - Toggle",
                 "id": 142,
                 "type": "button",
-                "vjoy": 1,
-                "button": 62,
+                "vjoy": 2,
+                "button": 20,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_throttle_swap_mode"
             },
@@ -743,8 +1271,8 @@
                 "name": "Throttle - Cruise Mode - Enable",
                 "id": 143,
                 "type": "button",
-                "vjoy": 1,
-                "button": 63,
+                "vjoy": 2,
+                "button": 21,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_throttle_set_sticky"
             },
@@ -752,8 +1280,8 @@
                 "name": "Throttle - Cruise Mode - Disable",
                 "id": 144,
                 "type": "button",
-                "vjoy": 1,
-                "button": 64,
+                "vjoy": 2,
+                "button": 22,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_throttle_set_normal"
             },
@@ -761,8 +1289,8 @@
                 "name": "Throttle - Trim - Set (long)",
                 "id": 145,
                 "type": "button",
-                "vjoy": 1,
-                "button": 65,
+                "vjoy": 2,
+                "button": 23,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_trim_set_long"
             },
@@ -770,8 +1298,8 @@
                 "name": "Throttle - Trim - Set (short)",
                 "id": 150,
                 "type": "button",
-                "vjoy": 1,
-                "button": 66,
+                "vjoy": 2,
+                "button": 24,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_trim_set_short"
             },
@@ -779,8 +1307,8 @@
                 "name": "Throttle - Trim - Set to 100% (long)",
                 "id": 152,
                 "type": "button",
-                "vjoy": 1,
-                "button": 67,
+                "vjoy": 2,
+                "button": 25,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_trim_set_100_long"
             },
@@ -788,8 +1316,8 @@
                 "name": "Throttle - Trim - Set to 100% (short)",
                 "id": 154,
                 "type": "button",
-                "vjoy": 1,
-                "button": 68,
+                "vjoy": 2,
+                "button": 26,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_trim_set_100_short"
             },
@@ -797,8 +1325,8 @@
                 "name": "Throttle - Trim - Set to 50% (long)",
                 "id": 156,
                 "type": "button",
-                "vjoy": 1,
-                "button": 69,
+                "vjoy": 2,
+                "button": 27,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_trim_set_50_long"
             },
@@ -806,8 +1334,8 @@
                 "name": "Throttle - Trim - Set to 50% (short)",
                 "id": 158,
                 "type": "button",
-                "vjoy": 1,
-                "button": 70,
+                "vjoy": 2,
+                "button": 28,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_trim_set_50_short"
             },
@@ -815,8 +1343,8 @@
                 "name": "Throttle - Trim - Release (long)",
                 "id": 160,
                 "type": "button",
-                "vjoy": 1,
-                "button": 71,
+                "vjoy": 2,
+                "button": 29,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_trim_reset_long"
             },
@@ -824,8 +1352,8 @@
                 "name": "Throttle - Trim - Release (short)",
                 "id": 161,
                 "type": "button",
-                "vjoy": 1,
-                "button": 72,
+                "vjoy": 2,
+                "button": 30,
                 "actionmap": "spaceship_movement",
                 "action": "v_strafe_trim_reset_short"
             },
@@ -833,8 +1361,8 @@
                 "name": "Decoupled Mode (Toggle, Hold)",
                 "id": 165,
                 "type": "button",
-                "vjoy": 1,
-                "button": 73,
+                "vjoy": 2,
+                "button": 31,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_toggle_vector_decoupling"
             },
@@ -842,8 +1370,8 @@
                 "name": "Boost",
                 "id": 170,
                 "type": "button",
-                "vjoy": 1,
-                "button": 74,
+                "vjoy": 2,
+                "button": 32,
                 "actionmap": "spaceship_movement",
                 "action": "v_afterburner"
             },
@@ -851,19 +1379,37 @@
                 "name": "Speed Limiter - Increase",
                 "id": 175,
                 "type": "button",
-                "vjoy": 1,
-                "button": 75,
+                "vjoy": 2,
+                "button": 33,
                 "actionmap": "spaceship_movement",
-                "action": "v_speed_range_up"
+                "action": "v_ifcs_speed_limiter_up"
             },
             {
                 "name": "Speed Limiter - Decrease",
                 "id": 180,
                 "type": "button",
-                "vjoy": 1,
-                "button": 76,
+                "vjoy": 2,
+                "button": 34,
                 "actionmap": "spaceship_movement",
-                "action": "v_speed_range_down"
+                "action": "v_ifcs_speed_limiter_down"
+            },
+            {
+                "name": "Speed Limiter - Step Up",
+                "id": 182,
+                "type": "button",
+                "vjoy": 2,
+                "button": 35,
+                "actionmap": "spaceship_movement",
+                "action": "v_ifcs_speed_limiter_decrement"
+            },
+            {
+                "name": "Speed Limiter - Step Down",
+                "id": 183,
+                "type": "button",
+                "vjoy": 2,
+                "button": 36,
+                "actionmap": "spaceship_movement",
+                "action": "v_ifcs_speed_limiter_increment"
             },
             {
                 "name": "Speed Limiter (relative)",
@@ -872,7 +1418,7 @@
                 "vjoy": 2,
                 "axis": 3,
                 "actionmap": "spaceship_movement",
-                "action": "v_speed_range_rel"
+                "action": "v_ifcs_speed_limiter_rel"
             },
             {
                 "name": "Speed Limiter (absolute)",
@@ -881,43 +1427,80 @@
                 "vjoy": 2,
                 "axis": 4,
                 "actionmap": "spaceship_movement",
-                "action": "v_speed_range_abs"
+                "action": "v_ifcs_speed_limiter_abs"
             },
             {
-                "name": "Speed Limiter - On/Off (Hold/Toggle)",
+                "name": "Speed Limiter - Enable / Disable",
                 "id": 195,
                 "type": "button",
-                "vjoy": 1,
-                "button": 77,
+                "vjoy": 2,
+                "button": 37,
                 "actionmap": "spaceship_movement",
-                "action": "v_ifcs_toggle_speed_limiter"
+                "action": "v_ifcs_speed_limiter_toggle"
             },
             {
-                "name": "Speed Limiter - Reset to SCM",
+                "name": "Speed Limiter - Enable",
+                "id": 196,
+                "type": "button",
+                "vjoy": 2,
+                "button": 38,
+                "actionmap": "spaceship_movement",
+                "action": "v_ifcs_speed_limiter_on"
+            },
+            {
+                "name": "Speed Limiter - Disable",
+                "id": 197,
+                "type": "button",
+                "vjoy": 2,
+                "button": 39,
+                "actionmap": "spaceship_movement",
+                "action": "v_ifcs_speed_limiter_off"
+            },
+            {
+                "name": "Remap - Control No Longer Available",
                 "id": 200,
                 "type": "button",
-                "vjoy": 1,
-                "button": 78,
+                "vjoy": 0,
+                "disabled": true,
+                "button": 0,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_speed_limiter_reset_scm"
             },
             {
-                "name": "Acceleration Limiter Increase",
-                "id": 205,
+                "name": "Acceleration Limiter - Increase",
+                "id": 202,
                 "type": "button",
-                "vjoy": 1,
-                "button": 79,
+                "vjoy": 2,
+                "button": 40,
                 "actionmap": "spaceship_movement",
                 "action": "v_accel_range_up"
             },
             {
-                "name": "Acceleration Limiter Decrease",
-                "id": 210,
+                "name": "Acceleration Limiter - Decrease",
+                "id": 203,
                 "type": "button",
-                "vjoy": 1,
-                "button": 80,
+                "vjoy": 2,
+                "button": 41,
                 "actionmap": "spaceship_movement",
                 "action": "v_accel_range_down"
+            },
+            {
+                "name": "Acceleration Limiter - Step Up",
+                "id": 205,
+                "type": "button",
+                "vjoy": 2,
+                "button": 42,
+                "actionmap": "spaceship_movement",
+                "action": "v_accel_range_increment"
+            },
+            {
+                "name": "Acceleration Limiter - Step Down",
+                "id": 210,
+                "type": "button",
+                "vjoy": 2,
+                "button": 43,
+                "actionmap": "spaceship_movement",
+                "action": "v_accel_range_decrement"
             },
             {
                 "name": "Acceleration Limiter Up/Down (relative)",
@@ -938,11 +1521,12 @@
                 "action": "v_accel_range_abs"
             },
             {
-                "name": "Match Target Velocity",
+                "name": "Remap - Control No Longer Available",
                 "id": 225,
                 "type": "button",
-                "vjoy": 1,
-                "button": 81,
+                "disabled": true,
+                "vjoy": 0,
+                "button": 0,
                 "actionmap": "spaceship_movement",
                 "action": "v_target_match_vel"
             },
@@ -950,8 +1534,8 @@
                 "name": "Spacebrake",
                 "id": 230,
                 "type": "button",
-                "vjoy": 1,
-                "button": 82,
+                "vjoy": 2,
+                "button": 44,
                 "actionmap": "spaceship_movement",
                 "action": "v_space_brake"
             },
@@ -959,8 +1543,8 @@
                 "name": "Lock Pitch/Yaw Movement (Toggle/Hold)",
                 "id": 235,
                 "type": "button",
-                "vjoy": 1,
-                "button": 83,
+                "vjoy": 2,
+                "button": 45,
                 "actionmap": "spaceship_movement",
                 "action": "v_lock_rotation"
             },
@@ -968,8 +1552,8 @@
                 "name": "G-Force Safety Toggle",
                 "id": 240,
                 "type": "button",
-                "vjoy": 1,
-                "button": 84,
+                "vjoy": 2,
+                "button": 46,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_toggle_gforce_safety"
             },
@@ -977,8 +1561,8 @@
                 "name": "G-Force Safety On",
                 "id": 241,
                 "type": "button",
-                "vjoy": 1,
-                "button": 85,
+                "vjoy": 2,
+                "button": 47,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_gsafe_on"
             },
@@ -986,8 +1570,8 @@
                 "name": "G-Force Safety Off",
                 "id": 242,
                 "type": "button",
-                "vjoy": 1,
-                "button": 86,
+                "vjoy": 2,
+                "button": 48,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_gsafe_off"
             },
@@ -995,17 +1579,17 @@
                 "name": "E.S.P. - Toggle On/Off (Press)",
                 "id": 245,
                 "type": "button",
-                "vjoy": 1,
-                "button": 87,
+                "vjoy": 2,
+                "button": 49,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_toggle_esp"
             },
             {
-                "name": "E.S.P. (Hold)",
+                "name": "E.S.P. - Enable Temporarily (Hold)",
                 "id": 250,
                 "type": "button",
-                "vjoy": 1,
-                "button": 88,
+                "vjoy": 2,
+                "button": 50,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_esp_hold"
             },
@@ -1023,8 +1607,8 @@
                 "name": "Landing System (Toggle)",
                 "id": 260,
                 "type": "button",
-                "vjoy": 1,
-                "button": 89,
+                "vjoy": 2,
+                "button": 51,
                 "actionmap": "spaceship_movement",
                 "action": "v_toggle_landing_system"
             },
@@ -1032,8 +1616,8 @@
                 "name": "Landing System (Deploy)",
                 "id": 265,
                 "type": "button",
-                "vjoy": 1,
-                "button": 90,
+                "vjoy": 2,
+                "button": 52,
                 "actionmap": "spaceship_movement",
                 "action": "v_deploy_landing_system"
             },
@@ -1041,8 +1625,8 @@
                 "name": "Landing System (Retract)",
                 "id": 270,
                 "type": "button",
-                "vjoy": 1,
-                "button": 91,
+                "vjoy": 2,
+                "button": 53,
                 "actionmap": "spaceship_movement",
                 "action": "v_retract_landing_system"
             },
@@ -1050,8 +1634,8 @@
                 "name": "Toggle VTOL",
                 "id": 275,
                 "type": "button",
-                "vjoy": 1,
-                "button": 92,
+                "vjoy": 2,
+                "button": 54,
                 "actionmap": "spaceship_movement",
                 "action": "v_toggle_vtol"
             },
@@ -1059,8 +1643,8 @@
                 "name": "Expand Configuration",
                 "id": 280,
                 "type": "button",
-                "vjoy": 1,
-                "button": 93,
+                "vjoy": 2,
+                "button": 55,
                 "actionmap": "spaceship_movement",
                 "action": "v_transform_deploy"
             },
@@ -1068,8 +1652,8 @@
                 "name": "Retract Configuration",
                 "id": 285,
                 "type": "button",
-                "vjoy": 1,
-                "button": 94,
+                "vjoy": 2,
+                "button": 56,
                 "actionmap": "spaceship_movement",
                 "action": "v_transform_retract"
             },
@@ -1077,8 +1661,8 @@
                 "name": "Cycle Configuration",
                 "id": 290,
                 "type": "button",
-                "vjoy": 1,
-                "button": 95,
+                "vjoy": 2,
+                "button": 57,
                 "actionmap": "spaceship_movement",
                 "action": "v_transform_cycle"
             },
@@ -1086,8 +1670,8 @@
                 "name": "Autoland",
                 "id": 295,
                 "type": "button",
-                "vjoy": 1,
-                "button": 96,
+                "vjoy": 2,
+                "button": 58,
                 "actionmap": "spaceship_movement",
                 "action": "v_autoland"
             },
@@ -1095,17 +1679,17 @@
                 "name": "Requst Landing",
                 "id": 300,
                 "type": "button",
-                "vjoy": 1,
-                "button": 97,
+                "vjoy": 2,
+                "button": 59,
                 "actionmap": "spaceship_movement",
                 "action": "v_atc_request"
             },
             {
-                "name": "ATC Loading Request",
+                "name": "Request Cargo Loading",
                 "id": 305,
                 "type": "button",
-                "vjoy": 1,
-                "button": 98,
+                "vjoy": 2,
+                "button": 60,
                 "actionmap": "spaceship_movement",
                 "action": "v_atc_loading_area_request"
             },
@@ -1113,8 +1697,8 @@
                 "name": "Cycle Master Mode (short)",
                 "id": 310,
                 "type": "button",
-                "vjoy": 1,
-                "button": 99,
+                "vjoy": 2,
+                "button": 61,
                 "actionmap": "spaceship_movement",
                 "action": "v_master_mode_cycle"
             },
@@ -1122,8 +1706,8 @@
                 "name": "Cycle Master Mode (long)",
                 "id": 311,
                 "type": "button",
-                "vjoy": 1,
-                "button": 100,
+                "vjoy": 2,
+                "button": 62,
                 "actionmap": "spaceship_movement",
                 "action": "v_master_mode_cycle_long"
             },
@@ -1132,7 +1716,7 @@
                 "id": 312,
                 "type": "button",
                 "vjoy": 2,
-                "button": 1,
+                "button": 63,
                 "actionmap": "spaceship_movement",
                 "action": "v_master_mode_set_nav"
             },
@@ -1141,7 +1725,7 @@
                 "id": 313,
                 "type": "button",
                 "vjoy": 2,
-                "button": 2,
+                "button": 64,
                 "actionmap": "spaceship_movement",
                 "action": "v_master_mode_set_scm"
             },
@@ -1150,7 +1734,7 @@
                 "id": 315,
                 "type": "button",
                 "vjoy": 2,
-                "button": 3,
+                "button": 65,
                 "actionmap": "spaceship_movement",
                 "action": "v_toggle_jump_request"
             },
@@ -1169,7 +1753,7 @@
                 "id": 325,
                 "type": "button",
                 "vjoy": 2,
-                "button": 4,
+                "button": 66,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_toggle_gravity_compensation"
             },
@@ -1178,7 +1762,7 @@
                 "id": 330,
                 "type": "button",
                 "vjoy": 2,
-                "button": 5,
+                "button": 67,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_gravity_compensation_on"
             },
@@ -1187,7 +1771,7 @@
                 "id": 335,
                 "type": "button",
                 "vjoy": 2,
-                "button": 6,
+                "button": 68,
                 "actionmap": "spaceship_movement",
                 "action": "v_ifcs_gravity_compensation_off"
             },
@@ -1196,7 +1780,7 @@
                 "id": 340,
                 "type": "button",
                 "vjoy": 2,
-                "button": 7,
+                "button": 69,
                 "actionmap": "spaceship_movement",
                 "action": "v_auto_precision_mode_toggle"
             },
@@ -1205,7 +1789,7 @@
                 "id": 345,
                 "type": "button",
                 "vjoy": 2,
-                "button": 8,
+                "button": 70,
                 "actionmap": "spaceship_movement",
                 "action": "v_auto_precision_mode_on"
             },
@@ -1214,9 +1798,72 @@
                 "id": 350,
                 "type": "button",
                 "vjoy": 2,
-                "button": 9,
+                "button": 71,
                 "actionmap": "spaceship_movement",
                 "action": "v_auto_precision_mode_off"
+            },
+            {
+                "name": "IFSC Proximity Assist Toggle",
+                "id": 355,
+                "type": "button",
+                "vjoy": 2,
+                "button": 72,
+                "actionmap": "spaceship_movement",
+                "action": "v_ifcs_proximity_assist_toggle"
+            },
+            {
+                "name": "IFSC Proximity Assist On",
+                "id": 360,
+                "type": "button",
+                "vjoy": 2,
+                "button": 73,
+                "actionmap": "spaceship_movement",
+                "action": "v_ifcs_proximity_assist_on"
+            },
+            {
+                "name": "IFSC Proximity Assist Off",
+                "id": 365,
+                "type": "button",
+                "vjoy": 2,
+                "button": 74,
+                "actionmap": "spaceship_movement",
+                "action": "v_ifcs_proximity_assist_off"
+            },
+            {
+                "name": "Reset Flight Accelerometer",
+                "id": 370,
+                "type": "button",
+                "vjoy": 2,
+                "button": 75,
+                "actionmap": "spaceship_movement",
+                "action": "v_ifcs_reset_gmeter_max"
+            },
+            {
+                "name": "Advanced HUD - Toggle",
+                "id": 375,
+                "type": "button",
+                "vjoy": 2,
+                "button": 76,
+                "actionmap": "spaceship_movement",
+                "action": "v_flight_advanced_hud_toggle"
+            },
+            {
+                "name": "Advanced HUD - Enable",
+                "id": 380,
+                "type": "button",
+                "vjoy": 2,
+                "button": 77,
+                "actionmap": "spaceship_movement",
+                "action": "v_flight_advanced_hud_on"
+            },
+            {
+                "name": "Advanced HUD - Disable",
+                "id": 385,
+                "type": "button",
+                "vjoy": 2,
+                "button": 78,
+                "actionmap": "spaceship_movement",
+                "action": "v_flight_advanced_hud_off"
             }
         ]
     },
@@ -1229,7 +1876,7 @@
                 "id": 10,
                 "type": "button",
                 "vjoy": 2,
-                "button": 10,
+                "button": 79,
                 "actionmap": "spaceship_quantum",
                 "action": "v_toggle_qdrive_engagement"
             }
@@ -1244,7 +1891,7 @@
                 "id": 10,
                 "type": "button",
                 "vjoy": 2,
-                "button": 11,
+                "button": 80,
                 "actionmap": "spaceship_docking",
                 "action": "v_toggle_docking_mode"
             },
@@ -1253,7 +1900,7 @@
                 "id": 15,
                 "type": "button",
                 "vjoy": 2,
-                "button": 12,
+                "button": 81,
                 "actionmap": "spaceship_docking",
                 "action": "v_invoke_docking"
             },
@@ -1262,7 +1909,7 @@
                 "id": 20,
                 "type": "button",
                 "vjoy": 2,
-                "button": 13,
+                "button": 82,
                 "actionmap": "spaceship_docking",
                 "action": "v_dock_toggle_view"
             }
@@ -1277,7 +1924,7 @@
                 "id": 1,
                 "type": "button",
                 "vjoy": 2,
-                "button": 14,
+                "button": 83,
                 "actionmap": "spaceship_targeting",
                 "action": "v_auto_targeting_toggle_long"
             },
@@ -1286,7 +1933,7 @@
                 "id": 2,
                 "type": "button",
                 "vjoy": 2,
-                "button": 15,
+                "button": 84,
                 "actionmap": "spaceship_targeting",
                 "action": "v_auto_targeting_toggle_short"
             },
@@ -1295,7 +1942,7 @@
                 "id": 4,
                 "type": "button",
                 "vjoy": 2,
-                "button": 16,
+                "button": 85,
                 "actionmap": "spaceship_targeting",
                 "action": "v_auto_targeting_enable_long"
             },
@@ -1304,7 +1951,7 @@
                 "id": 5,
                 "type": "button",
                 "vjoy": 2,
-                "button": 17,
+                "button": 86,
                 "actionmap": "spaceship_targeting",
                 "action": "v_auto_targeting_enable_short"
             },
@@ -1313,7 +1960,7 @@
                 "id": 7,
                 "type": "button",
                 "vjoy": 2,
-                "button": 18,
+                "button": 87,
                 "actionmap": "spaceship_targeting",
                 "action": "v_auto_targeting_disable_long"
             },
@@ -1322,7 +1969,7 @@
                 "id": 8,
                 "type": "button",
                 "vjoy": 2,
-                "button": 19,
+                "button": 88,
                 "actionmap": "spaceship_targeting",
                 "action": "v_auto_targeting_disable_short"
             },
@@ -1331,7 +1978,7 @@
                 "id": 10,
                 "type": "button",
                 "vjoy": 2,
-                "button": 20,
+                "button": 89,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_toggle_lock_index_1"
             },
@@ -1340,7 +1987,7 @@
                 "id": 15,
                 "type": "button",
                 "vjoy": 2,
-                "button": 21,
+                "button": 90,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_toggle_lock_index_2"
             },
@@ -1349,7 +1996,7 @@
                 "id": 20,
                 "type": "button",
                 "vjoy": 2,
-                "button": 22,
+                "button": 91,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_toggle_lock_index_3"
             },
@@ -1358,7 +2005,7 @@
                 "id": 25,
                 "type": "button",
                 "vjoy": 2,
-                "button": 23,
+                "button": 92,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_toggle_pin_index_1"
             },
@@ -1367,7 +2014,7 @@
                 "id": 30,
                 "type": "button",
                 "vjoy": 2,
-                "button": 24,
+                "button": 93,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_toggle_pin_index_2"
             },
@@ -1376,7 +2023,7 @@
                 "id": 35,
                 "type": "button",
                 "vjoy": 2,
-                "button": 25,
+                "button": 94,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_toggle_pin_index_3"
             },
@@ -1385,7 +2032,7 @@
                 "id": 40,
                 "type": "button",
                 "vjoy": 2,
-                "button": 26,
+                "button": 95,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_toggle_pin_index_1_hold"
             },
@@ -1394,7 +2041,7 @@
                 "id": 45,
                 "type": "button",
                 "vjoy": 2,
-                "button": 27,
+                "button": 96,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_toggle_pin_index_2_hold"
             },
@@ -1403,7 +2050,7 @@
                 "id": 50,
                 "type": "button",
                 "vjoy": 2,
-                "button": 28,
+                "button": 97,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_toggle_pin_index_3_hold"
             },
@@ -1412,7 +2059,7 @@
                 "id": 55,
                 "type": "button",
                 "vjoy": 2,
-                "button": 29,
+                "button": 98,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_pin_selected"
             },
@@ -1421,7 +2068,7 @@
                 "id": 60,
                 "type": "button",
                 "vjoy": 2,
-                "button": 30,
+                "button": 99,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_unpin_selected"
             },
@@ -1429,8 +2076,8 @@
                 "name": "Pin Selected Target (hold)",
                 "id": 65,
                 "type": "button",
-                "vjoy": 2,
-                "button": 31,
+                "vjoy": 3,
+                "button": 1,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_pin_selected_hold"
             },
@@ -1438,8 +2085,8 @@
                 "name": "Unpin Selected Target (hold)",
                 "id": 70,
                 "type": "button",
-                "vjoy": 2,
-                "button": 32,
+                "vjoy": 3,
+                "button": 2,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_unpin_selected_hold"
             },
@@ -1447,8 +2094,8 @@
                 "name": "Remove All Pinned Targets",
                 "id": 75,
                 "type": "button",
-                "vjoy": 2,
-                "button": 33,
+                "vjoy": 3,
+                "button": 3,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_remove_all_pins"
             },
@@ -1456,8 +2103,8 @@
                 "name": "Lock Selected Target",
                 "id": 80,
                 "type": "button",
-                "vjoy": 2,
-                "button": 34,
+                "vjoy": 3,
+                "button": 4,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_lock_selected"
             },
@@ -1465,8 +2112,8 @@
                 "name": "Unlock Current Target",
                 "id": 85,
                 "type": "button",
-                "vjoy": 2,
-                "button": 35,
+                "vjoy": 3,
+                "button": 5,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_unlock"
             },
@@ -1474,8 +2121,8 @@
                 "name": "Enable/Disable Look Ahead",
                 "id": 90,
                 "type": "button",
-                "vjoy": 2,
-                "button": 36,
+                "vjoy": 3,
+                "button": 6,
                 "actionmap": "spaceship_targeting",
                 "action": "v_look_ahead_enable"
             },
@@ -1483,8 +2130,8 @@
                 "name": "Enable/Disable Target Padlock (Toggle, Hold)",
                 "id": 95,
                 "type": "button",
-                "vjoy": 2,
-                "button": 37,
+                "vjoy": 3,
+                "button": 7,
                 "actionmap": "spaceship_targeting",
                 "action": "v_look_ahead_start_target_tracking"
             },
@@ -1492,8 +2139,8 @@
                 "name": "Auto Zoom On Selected Target On/Off (Toggle, Hold)",
                 "id": 100,
                 "type": "button",
-                "vjoy": 2,
-                "button": 38,
+                "vjoy": 3,
+                "button": 8,
                 "actionmap": "spaceship_targeting",
                 "action": "v_target_tracking_auto_zoom"
             },
@@ -1537,8 +2184,8 @@
                 "name": "Lock Target Under Reticle",
                 "id": 1,
                 "type": "button",
-                "vjoy": 2,
-                "button": 39,
+                "vjoy": 3,
+                "button": 9,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_under_reticle"
             },
@@ -1546,8 +2193,8 @@
                 "name": "Cycle Lock - In View - Back",
                 "id": 10,
                 "type": "button",
-                "vjoy": 2,
-                "button": 40,
+                "vjoy": 3,
+                "button": 10,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_in_view_back"
             },
@@ -1555,8 +2202,8 @@
                 "name": "Cycle Lock - In View - Forward",
                 "id": 15,
                 "type": "button",
-                "vjoy": 2,
-                "button": 41,
+                "vjoy": 3,
+                "button": 11,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_in_view_fwd"
             },
@@ -1564,8 +2211,8 @@
                 "name": "Cycle Lock - In View - Under Reticle",
                 "id": 20,
                 "type": "button",
-                "vjoy": 2,
-                "button": 42,
+                "vjoy": 3,
+                "button": 12,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_in_view_reset"
             },
@@ -1573,8 +2220,8 @@
                 "name": "Cycle Lock - Pinned - Back",
                 "id": 25,
                 "type": "button",
-                "vjoy": 2,
-                "button": 43,
+                "vjoy": 3,
+                "button": 13,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_pinned_back"
             },
@@ -1582,8 +2229,8 @@
                 "name": "Cycle Lock - Pinned - Forward",
                 "id": 30,
                 "type": "button",
-                "vjoy": 2,
-                "button": 44,
+                "vjoy": 3,
+                "button": 14,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_pinned_fwd"
             },
@@ -1591,8 +2238,8 @@
                 "name": "Cycle Lock - Pinned - Reset to First",
                 "id": 35,
                 "type": "button",
-                "vjoy": 2,
-                "button": 45,
+                "vjoy": 3,
+                "button": 15,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_pinned_reset"
             },
@@ -1600,8 +2247,8 @@
                 "name": "Cycle Lock - Attackers - Back",
                 "id": 40,
                 "type": "button",
-                "vjoy": 2,
-                "button": 46,
+                "vjoy": 3,
+                "button": 16,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_attacker_back"
             },
@@ -1609,8 +2256,8 @@
                 "name": "Cycle Lock - Attackers - Forward",
                 "id": 45,
                 "type": "button",
-                "vjoy": 2,
-                "button": 47,
+                "vjoy": 3,
+                "button": 17,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_attacker_fwd"
             },
@@ -1618,8 +2265,8 @@
                 "name": "Cycle Lock - Attackers - Reset to Closest",
                 "id": 50,
                 "type": "button",
-                "vjoy": 2,
-                "button": 48,
+                "vjoy": 3,
+                "button": 18,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_attacker_reset"
             },
@@ -1627,8 +2274,8 @@
                 "name": "Cycle Lock - Hostiles - Back",
                 "id": 55,
                 "type": "button",
-                "vjoy": 2,
-                "button": 49,
+                "vjoy": 3,
+                "button": 19,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_hostile_back"
             },
@@ -1636,8 +2283,8 @@
                 "name": "Cycle Lock - Hostiles - Forward",
                 "id": 60,
                 "type": "button",
-                "vjoy": 2,
-                "button": 50,
+                "vjoy": 3,
+                "button": 20,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_hostile_fwd"
             },
@@ -1645,8 +2292,8 @@
                 "name": "Cycle Lock - Hostiles - Reset to Closest",
                 "id": 65,
                 "type": "button",
-                "vjoy": 2,
-                "button": 51,
+                "vjoy": 3,
+                "button": 21,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_hostile_reset"
             },
@@ -1654,8 +2301,8 @@
                 "name": "Cycle Lock - Friendlies - Back",
                 "id": 70,
                 "type": "button",
-                "vjoy": 2,
-                "button": 52,
+                "vjoy": 3,
+                "button": 22,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_friendly_back"
             },
@@ -1663,8 +2310,8 @@
                 "name": "Cycle Lock - Friendlies - Forward",
                 "id": 75,
                 "type": "button",
-                "vjoy": 2,
-                "button": 53,
+                "vjoy": 3,
+                "button": 23,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_friendly_fwd"
             },
@@ -1672,8 +2319,8 @@
                 "name": "Cycle Lock - Friendlies - Reset to Closest",
                 "id": 80,
                 "type": "button",
-                "vjoy": 2,
-                "button": 54,
+                "vjoy": 3,
+                "button": 24,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_friendly_reset"
             },
@@ -1681,8 +2328,8 @@
                 "name": "Cycle Lock - All - Back",
                 "id": 85,
                 "type": "button",
-                "vjoy": 2,
-                "button": 55,
+                "vjoy": 3,
+                "button": 25,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_all_back"
             },
@@ -1690,8 +2337,8 @@
                 "name": "Cycle Lock - All - Forward",
                 "id": 90,
                 "type": "button",
-                "vjoy": 2,
-                "button": 56,
+                "vjoy": 3,
+                "button": 26,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_all_fwd"
             },
@@ -1699,8 +2346,8 @@
                 "name": "Cycle Lock - All - Reset to Closest",
                 "id": 95,
                 "type": "button",
-                "vjoy": 2,
-                "button": 57,
+                "vjoy": 3,
+                "button": 27,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_all_reset"
             },
@@ -1708,8 +2355,8 @@
                 "name": "Cycle Lock - Sub-Target - Back",
                 "id": 100,
                 "type": "button",
-                "vjoy": 2,
-                "button": 58,
+                "vjoy": 3,
+                "button": 28,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_subitem_back"
             },
@@ -1717,8 +2364,8 @@
                 "name": "Cycle Lock - Sub-Target - Forward",
                 "id": 110,
                 "type": "button",
-                "vjoy": 2,
-                "button": 59,
+                "vjoy": 3,
+                "button": 29,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_subitem_fwd"
             },
@@ -1726,8 +2373,8 @@
                 "name": "Cycle Lock - Sub-Target - Reset to Main Target",
                 "id": 115,
                 "type": "button",
-                "vjoy": 2,
-                "button": 60,
+                "vjoy": 3,
+                "button": 30,
                 "actionmap": "spaceship_targeting_advanced",
                 "action": "v_target_cycle_subitem_reset"
             }
@@ -1741,8 +2388,8 @@
                 "name": "Hail Target",
                 "id": 10,
                 "type": "button",
-                "vjoy": 2,
-                "button": 61,
+                "vjoy": 3,
+                "button": 31,
                 "actionmap": "spaceship_target_hailing",
                 "action": "v_target_hail"
             }
@@ -1756,8 +2403,8 @@
                 "name": "Activate Ping (Hold & Release)",
                 "id": 10,
                 "type": "button",
-                "vjoy": 2,
-                "button": 62,
+                "vjoy": 3,
+                "button": 32,
                 "actionmap": "spaceship_radar",
                 "action": "v_invoke_ping"
             }
@@ -1771,8 +2418,8 @@
                 "name": "Activate Scanning",
                 "id": 10,
                 "type": "button",
-                "vjoy": 2,
-                "button": 63,
+                "vjoy": 3,
+                "button": 33,
                 "actionmap": "spaceship_scanning",
                 "action": "v_scanning_trigger_scan"
             },
@@ -1780,8 +2427,8 @@
                 "name": "Increase Scanning Angle",
                 "id": 15,
                 "type": "button",
-                "vjoy": 2,
-                "button": 64,
+                "vjoy": 3,
+                "button": 34,
                 "actionmap": "spaceship_scanning",
                 "action": "v_inc_scan_focus_level"
             },
@@ -1789,8 +2436,8 @@
                 "name": "Decrease Scanning Angle",
                 "id": 20,
                 "type": "button",
-                "vjoy": 2,
-                "button": 65,
+                "vjoy": 3,
+                "button": 35,
                 "actionmap": "spaceship_scanning",
                 "action": "v_dec_scan_focus_level"
             }
@@ -1804,8 +2451,8 @@
                 "name": "Fire Mining Laser (Toggle)",
                 "id": 10,
                 "type": "button",
-                "vjoy": 2,
-                "button": 66,
+                "vjoy": 3,
+                "button": 36,
                 "actionmap": "spaceship_mining",
                 "action": "v_toggle_mining_laser_fire"
             },
@@ -1813,8 +2460,8 @@
                 "name": "Switch Mining Laser (Toggle)",
                 "id": 15,
                 "type": "button",
-                "vjoy": 2,
-                "button": 67,
+                "vjoy": 3,
+                "button": 37,
                 "actionmap": "spaceship_mining",
                 "action": "v_toggle_mining_laser_type"
             },
@@ -1822,8 +2469,8 @@
                 "name": "Increase Mining Laser Power",
                 "id": 20,
                 "type": "button",
-                "vjoy": 2,
-                "button": 68,
+                "vjoy": 3,
+                "button": 38,
                 "actionmap": "spaceship_mining",
                 "action": "v_increase_mining_throttle"
             },
@@ -1831,8 +2478,8 @@
                 "name": "Decrease Mining Laser Power",
                 "id": 25,
                 "type": "button",
-                "vjoy": 2,
-                "button": 69,
+                "vjoy": 3,
+                "button": 39,
                 "actionmap": "spaceship_mining",
                 "action": "v_decrease_mining_throttle"
             },
@@ -1849,8 +2496,8 @@
                 "name": "Activate Mining Module (Slot 1)",
                 "id": 35,
                 "type": "button",
-                "vjoy": 2,
-                "button": 70,
+                "vjoy": 3,
+                "button": 40,
                 "actionmap": "spaceship_mining",
                 "action": "v_mining_use_consumable1"
             },
@@ -1858,8 +2505,8 @@
                 "name": "Activate Mining Module (Slot 2)",
                 "id": 40,
                 "type": "button",
-                "vjoy": 2,
-                "button": 71,
+                "vjoy": 3,
+                "button": 41,
                 "actionmap": "spaceship_mining",
                 "action": "v_mining_use_consumable2"
             },
@@ -1867,17 +2514,26 @@
                 "name": "Activate Mining Module (Slot 3)",
                 "id": 45,
                 "type": "button",
-                "vjoy": 2,
-                "button": 72,
+                "vjoy": 3,
+                "button": 42,
                 "actionmap": "spaceship_mining",
                 "action": "v_mining_use_consumable3"
+            },
+            {
+                "name": "Use Permanent Modifier",
+                "id": 47,
+                "type": "button",
+                "vjoy": 3,
+                "button": 43,
+                "actionmap": "spaceship_mining",
+                "action": "v_mining_use_permanent_modifier"
             },
             {
                 "name": "Jettison Cargo",
                 "id": 50,
                 "type": "button",
-                "vjoy": 2,
-                "button": 73,
+                "vjoy": 3,
+                "button": 44,
                 "actionmap": "spaceship_mining",
                 "action": "v_jettison_volatile_cargo"
             }
@@ -1891,8 +2547,8 @@
                 "name": "Tractor Beam Vehicle - Increase Distance",
                 "id": 10,
                 "type": "button",
-                "vjoy": 2,
-                "button": 74,
+                "vjoy": 3,
+                "button": 45,
                 "actionmap": "spaceship_salvage",
                 "action": "tractor_beam_vehicle_increase_distance"
             },
@@ -1900,8 +2556,8 @@
                 "name": "Tractor Beam Vehicle - Decrease Distance",
                 "id": 15,
                 "type": "button",
-                "vjoy": 2,
-                "button": 75,
+                "vjoy": 3,
+                "button": 46,
                 "actionmap": "spaceship_salvage",
                 "action": "tractor_beam_vehicle_decrease_distance"
             },
@@ -1909,8 +2565,8 @@
                 "name": "Toggle Fire Focused",
                 "id": 20,
                 "type": "button",
-                "vjoy": 2,
-                "button": 76,
+                "vjoy": 3,
+                "button": 47,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_toggle_fire_focused"
             },
@@ -1918,8 +2574,8 @@
                 "name": "Toggle Fire Left",
                 "id": 25,
                 "type": "button",
-                "vjoy": 2,
-                "button": 77,
+                "vjoy": 3,
+                "button": 48,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_toggle_fire_left"
             },
@@ -1927,8 +2583,8 @@
                 "name": "Toggle Fire Right",
                 "id": 30,
                 "type": "button",
-                "vjoy": 2,
-                "button": 78,
+                "vjoy": 3,
+                "button": 49,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_toggle_fire_right"
             },
@@ -1936,8 +2592,8 @@
                 "name": "Toggle Fire Fracture",
                 "id": 35,
                 "type": "button",
-                "vjoy": 2,
-                "button": 79,
+                "vjoy": 3,
+                "button": 50,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_toggle_fire_fracture"
             },
@@ -1945,8 +2601,8 @@
                 "name": "Toggle Fire Disintegrate",
                 "id": 40,
                 "type": "button",
-                "vjoy": 2,
-                "button": 80,
+                "vjoy": 3,
+                "button": 51,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_toggle_fire_disintegrate"
             },
@@ -1954,8 +2610,8 @@
                 "name": "Salvage Mode Gimbal (Toggle)",
                 "id": 45,
                 "type": "button",
-                "vjoy": 2,
-                "button": 81,
+                "vjoy": 3,
+                "button": 52,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_toggle_gimbal_mode"
             },
@@ -1963,8 +2619,8 @@
                 "name": "Salvage Mode Gimbal Reset",
                 "id": 50,
                 "type": "button",
-                "vjoy": 2,
-                "button": 82,
+                "vjoy": 3,
+                "button": 53,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_reset_gimbal"
             },
@@ -1972,8 +2628,8 @@
                 "name": "Increase Beam Spacing",
                 "id": 55,
                 "type": "button",
-                "vjoy": 2,
-                "button": 83,
+                "vjoy": 3,
+                "button": 54,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_increase_beam_spacing"
             },
@@ -1981,8 +2637,8 @@
                 "name": "Decrease Beam Spacing",
                 "id": 60,
                 "type": "button",
-                "vjoy": 2,
-                "button": 84,
+                "vjoy": 3,
+                "button": 55,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_decrease_beam_spacing"
             },
@@ -2008,8 +2664,8 @@
                 "name": "Salvage Beam Axis (Toggle)",
                 "id": 75,
                 "type": "button",
-                "vjoy": 2,
-                "button": 85,
+                "vjoy": 3,
+                "button": 56,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_toggle_beam_spacing_axis"
             },
@@ -2017,8 +2673,8 @@
                 "name": "Cycle Focused Salvage Modifiers",
                 "id": 80,
                 "type": "button",
-                "vjoy": 2,
-                "button": 86,
+                "vjoy": 3,
+                "button": 57,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_cycle_modifiers_focused"
             },
@@ -2026,8 +2682,8 @@
                 "name": "Cycle Left Salvage Modifiers",
                 "id": 85,
                 "type": "button",
-                "vjoy": 2,
-                "button": 87,
+                "vjoy": 3,
+                "button": 58,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_cycle_modifiers_left"
             },
@@ -2035,8 +2691,8 @@
                 "name": "Cycle Right Salvage Modifiers",
                 "id": 90,
                 "type": "button",
-                "vjoy": 2,
-                "button": 88,
+                "vjoy": 3,
+                "button": 59,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_cycle_modifiers_right"
             },
@@ -2044,8 +2700,8 @@
                 "name": "Cycle Structural Salvage Modifiers",
                 "id": 95,
                 "type": "button",
-                "vjoy": 2,
-                "button": 89,
+                "vjoy": 3,
+                "button": 60,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_cycle_modifiers_structural"
             },
@@ -2053,8 +2709,8 @@
                 "name": "Focus All Salvage Heads",
                 "id": 110,
                 "type": "button",
-                "vjoy": 2,
-                "button": 90,
+                "vjoy": 3,
+                "button": 61,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_focus_all_heads"
             },
@@ -2062,8 +2718,8 @@
                 "name": "Focus Left Salvage Head",
                 "id": 115,
                 "type": "button",
-                "vjoy": 2,
-                "button": 91,
+                "vjoy": 3,
+                "button": 62,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_focus_left"
             },
@@ -2071,8 +2727,8 @@
                 "name": "Focus Right Salvage Head",
                 "id": 120,
                 "type": "button",
-                "vjoy": 2,
-                "button": 92,
+                "vjoy": 3,
+                "button": 63,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_focus_right"
             },
@@ -2080,8 +2736,8 @@
                 "name": "Focus Fracture Tool",
                 "id": 125,
                 "type": "button",
-                "vjoy": 2,
-                "button": 93,
+                "vjoy": 3,
+                "button": 64,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_focus_fracture"
             },
@@ -2089,8 +2745,8 @@
                 "name": "Focus Disintegration Tool",
                 "id": 130,
                 "type": "button",
-                "vjoy": 2,
-                "button": 94,
+                "vjoy": 3,
+                "button": 65,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_focus_disintegrate"
             },
@@ -2098,8 +2754,8 @@
                 "name": "Nudge Left Salvage Tool Up",
                 "id": 135,
                 "type": "button",
-                "vjoy": 2,
-                "button": 95,
+                "vjoy": 3,
+                "button": 66,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_nudge_up__left"
             },
@@ -2107,8 +2763,8 @@
                 "name": "Nudge Left Salvage Tool Down",
                 "id": 140,
                 "type": "button",
-                "vjoy": 2,
-                "button": 96,
+                "vjoy": 3,
+                "button": 67,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_nudge_down__left"
             },
@@ -2116,8 +2772,8 @@
                 "name": "Nudge Left Salvage Tool Left",
                 "id": 145,
                 "type": "button",
-                "vjoy": 2,
-                "button": 97,
+                "vjoy": 3,
+                "button": 68,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_nudge_left__left"
             },
@@ -2125,8 +2781,8 @@
                 "name": "Nudge Left Salvage Tool Right",
                 "id": 150,
                 "type": "button",
-                "vjoy": 2,
-                "button": 98,
+                "vjoy": 3,
+                "button": 69,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_nudge_left__right"
             },
@@ -2134,8 +2790,8 @@
                 "name": "Nudge Right Salvage Tool Up",
                 "id": 155,
                 "type": "button",
-                "vjoy": 2,
-                "button": 99,
+                "vjoy": 3,
+                "button": 70,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_nudge_up__right"
             },
@@ -2144,7 +2800,7 @@
                 "id": 160,
                 "type": "button",
                 "vjoy": 3,
-                "button": 1,
+                "button": 71,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_nudge_down__right"
             },
@@ -2153,7 +2809,7 @@
                 "id": 165,
                 "type": "button",
                 "vjoy": 3,
-                "button": 2,
+                "button": 72,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_nudge_right__left"
             },
@@ -2162,7 +2818,7 @@
                 "id": 170,
                 "type": "button",
                 "vjoy": 3,
-                "button": 3,
+                "button": 73,
                 "actionmap": "spaceship_salvage",
                 "action": "v_salvage_nudge_right__right"
             }
@@ -2177,7 +2833,7 @@
                 "id": 10,
                 "type": "button",
                 "vjoy": 3,
-                "button": 4,
+                "button": 74,
                 "actionmap": "turret_movement",
                 "action": "turret_pitch_up"
             },
@@ -2186,7 +2842,7 @@
                 "id": 15,
                 "type": "button",
                 "vjoy": 3,
-                "button": 5,
+                "button": 75,
                 "actionmap": "turret_movement",
                 "action": "turret_pitch_down"
             },
@@ -2204,7 +2860,7 @@
                 "id": 25,
                 "type": "button",
                 "vjoy": 3,
-                "button": 6,
+                "button": 76,
                 "actionmap": "turret_movement",
                 "action": "turret_yaw_left"
             },
@@ -2213,7 +2869,7 @@
                 "id": 30,
                 "type": "button",
                 "vjoy": 3,
-                "button": 7,
+                "button": 77,
                 "actionmap": "turret_movement",
                 "action": "turret_yaw_right"
             },
@@ -2227,29 +2883,32 @@
                 "action": "turret_yaw"
             },
             {
-                "name": "Roll Left",
+                "name": "Remap - Control No Longer Available",
                 "id": 40,
                 "type": "button",
-                "vjoy": 3,
-                "button": 8,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "turret_movement",
                 "action": "turret_roll_left"
             },
             {
-                "name": "Roll Left",
+                "name": "Remap - Control No Longer Available",
                 "id": 45,
                 "type": "button",
-                "vjoy": 3,
-                "button": 9,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "turret_movement",
                 "action": "turret_roll_right"
             },
             {
-                "name": "Roll",
+                "name": "Remap - Control No Longer Available",
                 "id": 50,
                 "type": "axis",
-                "vjoy": 3,
-                "axis": 4,
+                "vjoy": 0,
+                "axis": 0,
+                "disabled": true,
                 "actionmap": "turret_movement",
                 "action": "turret_roll"
             },
@@ -2258,7 +2917,7 @@
                 "id": 55,
                 "type": "button",
                 "vjoy": 3,
-                "button": 10,
+                "button": 78,
                 "actionmap": "turret_movement",
                 "action": "turret_toggle_mouse_mode"
             },
@@ -2267,34 +2926,37 @@
                 "id": 60,
                 "type": "button",
                 "vjoy": 3,
-                "button": 11,
+                "button": 79,
                 "actionmap": "turret_movement",
                 "action": "turret_remote_exit"
             },
             {
-                "name": "Zoom In (Remote Turret)",
+                "name": "Remap - Control No Longer Available",
                 "id": 65,
                 "type": "button",
-                "vjoy": 3,
-                "button": 12,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "turret_movement",
                 "action": "turret_remote_zoom_in"
             },
             {
-                "name": "Zoom Out (Remote Turret)",
+                "name": "Remap - Control No Longer Available",
                 "id": 70,
                 "type": "button",
-                "vjoy": 3,
-                "button": 13,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "turret_movement",
                 "action": "turret_remote_zoom_out"
             },
             {
-                "name": "Zoom Toggle (Remote Turret)",
+                "name": "Remap - Control No Longer Available",
                 "id": 75,
                 "type": "button",
-                "vjoy": 3,
-                "button": 14,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "turret_movement",
                 "action": "turret_remote_zoom_toggle"
             },
@@ -2303,7 +2965,7 @@
                 "id": 80,
                 "type": "button",
                 "vjoy": 3,
-                "button": 15,
+                "button": 80,
                 "actionmap": "turret_movement",
                 "action": "turret_gyromode"
             },
@@ -2312,7 +2974,7 @@
                 "id": 85,
                 "type": "button",
                 "vjoy": 3,
-                "button": 16,
+                "button": 81,
                 "actionmap": "turret_movement",
                 "action": "turret_remote_cycle_next"
             },
@@ -2321,7 +2983,7 @@
                 "id": 86,
                 "type": "button",
                 "vjoy": 3,
-                "button": 17,
+                "button": 82,
                 "actionmap": "turret_movement",
                 "action": "turret_remote_cycle_prev"
             }
@@ -2336,7 +2998,7 @@
                 "id": 10,
                 "type": "button",
                 "vjoy": 3,
-                "button": 18,
+                "button": 83,
                 "actionmap": "turret_advanced",
                 "action": "turret_esp_toggle"
             },
@@ -2345,7 +3007,7 @@
                 "id": 15,
                 "type": "button",
                 "vjoy": 3,
-                "button": 19,
+                "button": 84,
                 "actionmap": "turret_advanced",
                 "action": "turret_esp_hold"
             },
@@ -2354,7 +3016,7 @@
                 "id": 20,
                 "type": "button",
                 "vjoy": 3,
-                "button": 20,
+                "button": 85,
                 "actionmap": "turret_advanced",
                 "action": "turret_recenter"
             },
@@ -2363,7 +3025,7 @@
                 "id": 25,
                 "type": "button",
                 "vjoy": 3,
-                "button": 21,
+                "button": 86,
                 "actionmap": "turret_advanced",
                 "action": "turret_limiter_toggle"
             },
@@ -2372,7 +3034,7 @@
                 "id": 30,
                 "type": "axis",
                 "vjoy": 3,
-                "axis": 5,
+                "axis": 4,
                 "actionmap": "turret_advanced",
                 "action": "turret_limiter_rel"
             },
@@ -2381,7 +3043,7 @@
                 "id": 35,
                 "type": "button",
                 "vjoy": 3,
-                "button": 22,
+                "button": 87,
                 "actionmap": "turret_advanced",
                 "action": "turret_limiter_rel_increase"
             },
@@ -2390,7 +3052,7 @@
                 "id": 40,
                 "type": "button",
                 "vjoy": 3,
-                "button": 23,
+                "button": 88,
                 "actionmap": "turret_advanced",
                 "action": "turret_limiter_rel_decrease"
             },
@@ -2399,7 +3061,7 @@
                 "id": 45,
                 "type": "axis",
                 "vjoy": 3,
-                "axis": 6,
+                "axis": 5,
                 "actionmap": "turret_advanced",
                 "action": "turret_limiter_abs"
             },
@@ -2408,16 +3070,17 @@
                 "id": 50,
                 "type": "button",
                 "vjoy": 3,
-                "button": 24,
+                "button": 89,
                 "actionmap": "turret_advanced",
                 "action": "turret_change_firemode"
             },
             {
-                "name": "Turret Instant Zoom",
+                "name": "Remap - Control No Longer Available",
                 "id": 55,
                 "type": "button",
-                "vjoy": 3,
-                "button": 25,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "turret_advanced",
                 "action": "turret_instant_zoom"
             },
@@ -2426,7 +3089,7 @@
                 "id": 60,
                 "type": "button",
                 "vjoy": 3,
-                "button": 26,
+                "button": 90,
                 "actionmap": "turret_advanced",
                 "action": "turret_change_position"
             }
@@ -2437,29 +3100,32 @@
         "name": "Vehicles - Weapons",
         "values": [
             {
-                "name": "Fire Weapon All",
+                "name": "Remap - Control No Longer Available",
                 "id": 10,
                 "type": "button",
-                "vjoy": 3,
-                "button": 27,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "spaceship_weapons",
                 "action": "v_attack_all"
             },
             {
-                "name": "Fire Weapon Group 1",
+                "name": "Remap - Control No Longer Available",
                 "id": 15,
                 "type": "button",
-                "vjoy": 3,
-                "button": 28,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "spaceship_weapons",
                 "action": "v_attack_group1"
             },
             {
-                "name": "Fire Weapon Group 2",
+                "name": "Remap - Control No Longer Available",
                 "id": 20,
                 "type": "button",
-                "vjoy": 3,
-                "button": 29,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "spaceship_weapons",
                 "action": "v_attack_group2"
             },
@@ -2468,16 +3134,16 @@
                 "id": 25,
                 "type": "button",
                 "vjoy": 3,
-                "button": 30,
+                "button": 91,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_manual_gimbal_cycle_source"
             },
             {
-                "name": "Manual Gimbal Mode - Lock Aim Vector",
+                "name": "Remap - Control No Longer Available",
                 "id": 30,
                 "type": "button",
                 "vjoy": 3,
-                "button": 31,
+                "button": 92,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_manual_gimbal_lock_vector"
             },
@@ -2486,7 +3152,7 @@
                 "id": 35,
                 "type": "button",
                 "vjoy": 3,
-                "button": 32,
+                "button": 93,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_gimbal_mode_cycle_all"
             },
@@ -2495,7 +3161,7 @@
                 "id": 40,
                 "type": "button",
                 "vjoy": 3,
-                "button": 33,
+                "button": 94,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_gimbal_mode_cycle_fixed_auto"
             },
@@ -2504,7 +3170,7 @@
                 "id": 45,
                 "type": "button",
                 "vjoy": 3,
-                "button": 34,
+                "button": 95,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_gimbal_mode_set_fixed_long"
             },
@@ -2513,7 +3179,7 @@
                 "id": 50,
                 "type": "button",
                 "vjoy": 3,
-                "button": 35,
+                "button": 96,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_gimbal_mode_set_auto_long"
             },
@@ -2522,7 +3188,7 @@
                 "id": 55,
                 "type": "button",
                 "vjoy": 3,
-                "button": 36,
+                "button": 97,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_gimbal_mode_set_manual_long"
             },
@@ -2531,7 +3197,7 @@
                 "id": 60,
                 "type": "button",
                 "vjoy": 3,
-                "button": 37,
+                "button": 98,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_gimbal_mode_set_fixed"
             },
@@ -2539,8 +3205,8 @@
                 "name": "Set Manual Gimbal Mode (short press)",
                 "id": 65,
                 "type": "button",
-                "vjoy": 3,
-                "button": 38,
+                "vjoy": 4,
+                "button": 1,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_gimbal_mode_set_manual"
             },
@@ -2548,8 +3214,8 @@
                 "name": "Set Auto Gimbal Mode (short press)",
                 "id": 70,
                 "type": "button",
-                "vjoy": 3,
-                "button": 39,
+                "vjoy": 4,
+                "button": 2,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_gimbal_mode_set_auto"
             },
@@ -2557,8 +3223,8 @@
                 "name": "Suppress Aim Assists (hold)",
                 "id": 75,
                 "type": "button",
-                "vjoy": 3,
-                "button": 40,
+                "vjoy": 4,
+                "button": 3,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_suppress_aim_assists_hold"
             },
@@ -2566,8 +3232,8 @@
                 "name": "Cycle Fire Mode (staggered/combined)",
                 "id": 80,
                 "type": "button",
-                "vjoy": 3,
-                "button": 41,
+                "vjoy": 4,
+                "button": 4,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_change_firemode"
             },
@@ -2575,8 +3241,8 @@
                 "name": "Toggle Lead/Lag PIPs",
                 "id": 85,
                 "type": "button",
-                "vjoy": 3,
-                "button": 42,
+                "vjoy": 4,
+                "button": 5,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_toggle_lead_lag"
             },
@@ -2584,8 +3250,8 @@
                 "name": "Set Lag PIPs",
                 "id": 90,
                 "type": "button",
-                "vjoy": 3,
-                "button": 43,
+                "vjoy": 4,
+                "button": 6,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_set_lag"
             },
@@ -2593,8 +3259,8 @@
                 "name": "Set Lead PIPs",
                 "id": 95,
                 "type": "button",
-                "vjoy": 3,
-                "button": 44,
+                "vjoy": 4,
+                "button": 7,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_set_lead"
             },
@@ -2602,8 +3268,8 @@
                 "name": "PIP Combination Type: Toggle",
                 "id": 100,
                 "type": "button",
-                "vjoy": 3,
-                "button": 45,
+                "vjoy": 4,
+                "button": 8,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_combination_type_toggle"
             },
@@ -2611,8 +3277,8 @@
                 "name": "PIP Combination Type: Set One PIP per Weapon",
                 "id": 110,
                 "type": "button",
-                "vjoy": 3,
-                "button": 46,
+                "vjoy": 4,
+                "button": 9,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_combination_type_set_single"
             },
@@ -2620,8 +3286,8 @@
                 "name": "PIP Combination Type: Set One PIP per Weapon Type",
                 "id": 115,
                 "type": "button",
-                "vjoy": 3,
-                "button": 47,
+                "vjoy": 4,
+                "button": 10,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_combination_type_set_combined_weapon_group"
             },
@@ -2639,8 +3305,8 @@
                 "name": "PIP Precision Lines Toggle",
                 "id": 117,
                 "type": "button",
-                "vjoy": 3,
-                "button": 48,
+                "vjoy": 4,
+                "button": 11,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_prec_line_toggle"
             },
@@ -2648,17 +3314,17 @@
                 "name": "PIP Precision Lines On",
                 "id": 118,
                 "type": "button",
-                "vjoy": 3,
-                "button": 49,
+                "vjoy": 4,
+                "button": 12,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_prec_line_on"
             },
             {
-                "name": "PIP Precision Lines off",
+                "name": "PIP Precision Lines Off",
                 "id": 119,
                 "type": "button",
-                "vjoy": 3,
-                "button": 50,
+                "vjoy": 4,
+                "button": 13,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_prec_line_off"
             },
@@ -2666,8 +3332,8 @@
                 "name": "PIP Fading Toggle",
                 "id": 121,
                 "type": "button",
-                "vjoy": 3,
-                "button": 51,
+                "vjoy": 4,
+                "button": 14,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_fade_toggle"
             },
@@ -2675,8 +3341,8 @@
                 "name": "PIP Fading On",
                 "id": 122,
                 "type": "button",
-                "vjoy": 3,
-                "button": 52,
+                "vjoy": 4,
+                "button": 15,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_fade_on"
             },
@@ -2684,8 +3350,8 @@
                 "name": "PIP Fading Off",
                 "id": 123,
                 "type": "button",
-                "vjoy": 3,
-                "button": 53,
+                "vjoy": 4,
+                "button": 16,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_pip_fade_off"
             },
@@ -2693,8 +3359,8 @@
                 "name": "Gunnery UI Magnification Toggle",
                 "id": 125,
                 "type": "button",
-                "vjoy": 3,
-                "button": 54,
+                "vjoy": 4,
+                "button": 17,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_ui_scale_toggle"
             },
@@ -2702,8 +3368,8 @@
                 "name": "Gunnery UI Magnification On",
                 "id": 126,
                 "type": "button",
-                "vjoy": 3,
-                "button": 55,
+                "vjoy": 4,
+                "button": 18,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_ui_scale_on"
             },
@@ -2711,8 +3377,8 @@
                 "name": "Gunnery UI Magnification Off",
                 "id": 127,
                 "type": "button",
-                "vjoy": 3,
-                "button": 56,
+                "vjoy": 4,
+                "button": 19,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_ui_scale_off"
             },
@@ -2721,7 +3387,7 @@
                 "id": 130,
                 "type": "axis",
                 "vjoy": 3,
-                "axis": 7,
+                "axis": 6,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_convergence_distance_rel"
             },
@@ -2729,8 +3395,8 @@
                 "name": "Manual Convergence Distance - Increase",
                 "id": 131,
                 "type": "button",
-                "vjoy": 3,
-                "button": 57,
+                "vjoy": 4,
+                "button": 20,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_convergence_distance_rel_increase"
             },
@@ -2738,8 +3404,8 @@
                 "name": "Manual Convergence Distance - Decrease",
                 "id": 132,
                 "type": "button",
-                "vjoy": 3,
-                "button": 58,
+                "vjoy": 4,
+                "button": 21,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_convergence_distance_rel_decrease"
             },
@@ -2748,7 +3414,7 @@
                 "id": 140,
                 "type": "axis",
                 "vjoy": 3,
-                "axis": 8,
+                "axis": 7,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_convergence_distance_abs"
             },
@@ -2756,8 +3422,8 @@
                 "name": "Manual Convergence Distance - Reset",
                 "id": 145,
                 "type": "button",
-                "vjoy": 3,
-                "button": 59,
+                "vjoy": 4,
+                "button": 22,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_convergence_distance_set_default"
             },
@@ -2765,17 +3431,53 @@
                 "name": "Weapon Preset - Fire",
                 "id": 150,
                 "type": "button",
-                "vjoy": 3,
-                "button": 60,
+                "vjoy": 4,
+                "button": 23,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_preset_attack"
+            },
+            {
+                "name": "Weapon Preset - Fire Guns Group 1",
+                "id": 151,
+                "type": "button",
+                "vjoy": 4,
+                "button": 24,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_fire_guns0"
+            },
+            {
+                "name": "Weapon Preset - Fire Guns Group 2",
+                "id": 152,
+                "type": "button",
+                "vjoy": 4,
+                "button": 25,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_fire_guns1"
+            },
+            {
+                "name": "Weapon Preset - Fire Guns Group 3",
+                "id": 153,
+                "type": "button",
+                "vjoy": 4,
+                "button": 26,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_fire_guns2"
+            },
+            {
+                "name": "Weapon Preset - Fire Guns Group 4",
+                "id": 154,
+                "type": "button",
+                "vjoy": 4,
+                "button": 27,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_fire_guns3"
             },
             {
                 "name": "Weapon Preset - Next",
                 "id": 155,
                 "type": "button",
-                "vjoy": 3,
-                "button": 61,
+                "vjoy": 4,
+                "button": 28,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_preset_next"
             },
@@ -2783,46 +3485,140 @@
                 "name": "Weapon Preset - Previous",
                 "id": 160,
                 "type": "button",
-                "vjoy": 3,
-                "button": 62,
+                "vjoy": 4,
+                "button": 29,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_preset_prev"
             },
             {
-                "name": "Precision Targeting - Enable (Hold)",
+                "name": "Weapon Preset - Next (overflow)",
+                "id": 162,
+                "type": "button",
+                "vjoy": 4,
+                "button": 30,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_next_overflow"
+            },
+            {
+                "name": "Weapon Preset - Previous (overflow)",
+                "id": 163,
+                "type": "button",
+                "vjoy": 4,
+                "button": 31,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_prev_overflow"
+            },
+            {
+                "name": "Control Moved to Vehicles - View",
                 "id": 165,
                 "type": "button",
-                "vjoy": 3,
-                "button": 63,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_ads_hold"
             },
             {
-                "name": "Precision Targeting - Toggle",
+                "name": "Control Moved to Vehicles - View",
                 "id": 170,
                 "type": "button",
-                "vjoy": 3,
-                "button": 64,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_ads_toggle"
             },
             {
-                "name": "Precision Targeting - Max Zoom (Hold)",
+                "name": "Control Moved to Vehicles - View",
                 "id": 175,
                 "type": "button",
-                "vjoy": 3,
-                "button": 65,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_ads_stable_max_zoom_hold"
             },
             {
-                "name": "Precision Targeting - Toggle Camera Tracking",
+                "name": "Control Moved to Vehicles - View",
                 "id": 180,
                 "type": "button",
-                "vjoy": 3,
-                "button": 66,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "spaceship_weapons",
                 "action": "v_weapon_ads_cycle_tracking"
+            },
+            {
+                "name": "Weapon Preset - Set Gun Group 1",
+                "id": 185,
+                "type": "button",
+                "vjoy": 4,
+                "button": 32,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_guns0"
+            },
+            {
+                "name": "Weapon Preset - Set Gun Group 2",
+                "id": 186,
+                "type": "button",
+                "vjoy": 4,
+                "button": 33,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_guns1"
+            },
+            {
+                "name": "Weapon Preset - Set Gun Group 3",
+                "id": 187,
+                "type": "button",
+                "vjoy": 4,
+                "button": 34,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_guns2"
+            },
+            {
+                "name": "Weapon Preset - Set Gun Group 4",
+                "id": 188,
+                "type": "button",
+                "vjoy": 4,
+                "button": 35,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_guns3"
+            },
+            {
+                "name": "Weapon Preset - Set EMPs",
+                "id": 190,
+                "type": "button",
+                "vjoy": 4,
+                "button": 36,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_emp"
+            },
+            {
+                "name": "Weapon Preset - Set Quantum Jammers (short range)",
+                "id": 195,
+                "type": "button",
+                "vjoy": 4,
+                "button": 37,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_qid_jammer"
+            },
+            {
+                "name": "Weapon Preset - Set Quantum Snares / Pulse (long range)",
+                "id": 200,
+                "type": "button",
+                "vjoy": 4,
+                "button": 38,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_qid_pulse"
+            },
+            {
+                "name": "Weapon Preset - Set QIDs",
+                "id": 205,
+                "type": "button",
+                "vjoy": 4,
+                "button": 39,
+                "actionmap": "spaceship_weapons",
+                "action": "v_weapon_preset_qid"
             }
         ]
     },
@@ -2834,8 +3630,8 @@
                 "name": "Launch Missiles (Tap)",
                 "id": 10,
                 "type": "button",
-                "vjoy": 3,
-                "button": 67,
+                "vjoy": 4,
+                "button": 40,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_toggle_launch_missile"
             },
@@ -2843,8 +3639,8 @@
                 "name": "Launch Missiles (Hold)",
                 "id": 15,
                 "type": "button",
-                "vjoy": 3,
-                "button": 68,
+                "vjoy": 4,
+                "button": 41,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_launch_missile"
             },
@@ -2852,8 +3648,8 @@
                 "name": "Cycle Next Missle Type",
                 "id": 20,
                 "type": "button",
-                "vjoy": 3,
-                "button": 69,
+                "vjoy": 4,
+                "button": 42,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_cycle_missile_fwd"
             },
@@ -2861,8 +3657,8 @@
                 "name": "Cycle Previous Missle Type",
                 "id": 25,
                 "type": "button",
-                "vjoy": 3,
-                "button": 70,
+                "vjoy": 4,
+                "button": 43,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_cycle_missile_back"
             },
@@ -2870,8 +3666,8 @@
                 "name": "Increase Number of Armed Missiles",
                 "id": 30,
                 "type": "button",
-                "vjoy": 3,
-                "button": 71,
+                "vjoy": 4,
+                "button": 44,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_increase_max_missiles"
             },
@@ -2879,8 +3675,8 @@
                 "name": "Decrease Number of Armed Missiles",
                 "id": 35,
                 "type": "button",
-                "vjoy": 3,
-                "button": 72,
+                "vjoy": 4,
+                "button": 45,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_decrease_max_missiles"
             },
@@ -2888,8 +3684,8 @@
                 "name": "Reset Number of Armed Missiles",
                 "id": 40,
                 "type": "button",
-                "vjoy": 3,
-                "button": 73,
+                "vjoy": 4,
+                "button": 46,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_reset_max_missiles"
             },
@@ -2897,8 +3693,8 @@
                 "name": "Bombs - Toggle Desired Impact Point (tap)",
                 "id": 45,
                 "type": "button",
-                "vjoy": 3,
-                "button": 74,
+                "vjoy": 4,
+                "button": 47,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_bombing_toggle_desired_impact_point"
             },
@@ -2906,8 +3702,8 @@
                 "name": "Bombs - Toggle Desired Impact Point (hold)",
                 "id": 50,
                 "type": "button",
-                "vjoy": 3,
-                "button": 75,
+                "vjoy": 4,
+                "button": 48,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_bombing_toggle_desired_impact_point_hold"
             },
@@ -2915,8 +3711,8 @@
                 "name": "Bombs - Increase HUD Range",
                 "id": 55,
                 "type": "button",
-                "vjoy": 3,
-                "button": 76,
+                "vjoy": 4,
+                "button": 49,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_bombing_hud_range_increase"
             },
@@ -2924,8 +3720,8 @@
                 "name": "Bombs - Decrease HUD Range",
                 "id": 60,
                 "type": "button",
-                "vjoy": 3,
-                "button": 77,
+                "vjoy": 4,
+                "button": 50,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_bombing_hud_range_decrease"
             },
@@ -2933,8 +3729,8 @@
                 "name": "Bombs - Reset HUD Range",
                 "id": 65,
                 "type": "button",
-                "vjoy": 3,
-                "button": 78,
+                "vjoy": 4,
+                "button": 51,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_bombing_hud_range_reset"
             },
@@ -2942,8 +3738,8 @@
                 "name": "Enable Cinematic Camera (toggle)",
                 "id": 70,
                 "type": "button",
-                "vjoy": 3,
-                "button": 79,
+                "vjoy": 4,
+                "button": 52,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_launch_missile_cinematic"
             },
@@ -2951,8 +3747,8 @@
                 "name": "Enable Cinematic Camera (hold)",
                 "id": 75,
                 "type": "button",
-                "vjoy": 3,
-                "button": 80,
+                "vjoy": 4,
+                "button": 53,
                 "actionmap": "spaceship_missiles",
                 "action": "v_weapon_launch_missile_cinematic_hold"
             }
@@ -2966,8 +3762,8 @@
                 "name": "Decoy - Launch Burst (tap), Set and Launch Burst (Hold)",
                 "id": 10,
                 "type": "button",
-                "vjoy": 3,
-                "button": 81,
+                "vjoy": 4,
+                "button": 54,
                 "actionmap": "spaceship_defensive",
                 "action": "v_weapon_countermeasure_decoy_launch"
             },
@@ -2975,8 +3771,8 @@
                 "name": "Decoy - Increase Burst Size",
                 "id": 15,
                 "type": "button",
-                "vjoy": 3,
-                "button": 82,
+                "vjoy": 4,
+                "button": 55,
                 "actionmap": "spaceship_defensive",
                 "action": "v_weapon_countermeasure_decoy_burst_decrease"
             },
@@ -2984,8 +3780,8 @@
                 "name": "Decoy - Decrease Burst Size",
                 "id": 20,
                 "type": "button",
-                "vjoy": 3,
-                "button": 83,
+                "vjoy": 4,
+                "button": 56,
                 "actionmap": "spaceship_defensive",
                 "action": "v_weapon_countermeasure_decoy_burst_increase"
             },
@@ -2993,8 +3789,8 @@
                 "name": "Decoy - Panic Launch",
                 "id": 25,
                 "type": "button",
-                "vjoy": 3,
-                "button": 84,
+                "vjoy": 4,
+                "button": 57,
                 "actionmap": "spaceship_defensive",
                 "action": "v_weapon_countermeasure_decoy_launch_panic"
             },
@@ -3002,8 +3798,8 @@
                 "name": "Noise - Deploy",
                 "id": 30,
                 "type": "button",
-                "vjoy": 3,
-                "button": 85,
+                "vjoy": 4,
+                "button": 58,
                 "actionmap": "spaceship_defensive",
                 "action": "v_weapon_countermeasure_noise_launch"
             },
@@ -3011,8 +3807,8 @@
                 "name": "Raise Shield Level - Front",
                 "id": 35,
                 "type": "button",
-                "vjoy": 3,
-                "button": 86,
+                "vjoy": 4,
+                "button": 59,
                 "actionmap": "spaceship_defensive",
                 "action": "v_shield_raise_level_forward"
             },
@@ -3020,8 +3816,8 @@
                 "name": "Raise Shield Level - Back",
                 "id": 40,
                 "type": "button",
-                "vjoy": 3,
-                "button": 87,
+                "vjoy": 4,
+                "button": 60,
                 "actionmap": "spaceship_defensive",
                 "action": "v_shield_raise_level_back"
             },
@@ -3029,8 +3825,8 @@
                 "name": "Raise Shield Level - Left",
                 "id": 45,
                 "type": "button",
-                "vjoy": 3,
-                "button": 88,
+                "vjoy": 4,
+                "button": 61,
                 "actionmap": "spaceship_defensive",
                 "action": "v_shield_raise_level_left"
             },
@@ -3038,8 +3834,8 @@
                 "name": "Raise Shield Level - Right",
                 "id": 50,
                 "type": "button",
-                "vjoy": 3,
-                "button": 89,
+                "vjoy": 4,
+                "button": 62,
                 "actionmap": "spaceship_defensive",
                 "action": "v_shield_raise_level_right"
             },
@@ -3047,8 +3843,8 @@
                 "name": "Raise Shield Level - Top",
                 "id": 55,
                 "type": "button",
-                "vjoy": 3,
-                "button": 90,
+                "vjoy": 4,
+                "button": 63,
                 "actionmap": "spaceship_defensive",
                 "action": "v_shield_raise_level_up"
             },
@@ -3056,8 +3852,8 @@
                 "name": "Raise Shield Level - Bottom",
                 "id": 60,
                 "type": "button",
-                "vjoy": 3,
-                "button": 91,
+                "vjoy": 4,
+                "button": 64,
                 "actionmap": "spaceship_defensive",
                 "action": "v_shield_raise_level_down"
             },
@@ -3065,8 +3861,8 @@
                 "name": "Reset Shield Level",
                 "id": 65,
                 "type": "button",
-                "vjoy": 3,
-                "button": 92,
+                "vjoy": 4,
+                "button": 65,
                 "actionmap": "spaceship_defensive",
                 "action": "v_shield_reset_level"
             }
@@ -3074,176 +3870,195 @@
     },
     {
         "category_id": 100,
-        "name": "Vehicles - Power Triangle Assignment",
+        "name": "Category moved to Flight - Power",
         "values": [
             {
-                "name": "Weapons - Increase",
+                "name": "Remap - Control No Longer Available",
                 "id": 10,
                 "type": "button",
-                "vjoy": 3,
-                "button": 93,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_weapon_increase"
             },
             {
-                "name": "Weapons - Decrease",
+                "name": "Remap - Control No Longer Available",
                 "id": 15,
                 "type": "button",
-                "vjoy": 3,
-                "button": 94,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_weapon_decrease"
             },
             {
-                "name": "Weapons - Set to Max",
+                "name": "Remap - Control No Longer Available",
                 "id": 20,
                 "type": "button",
-                "vjoy": 3,
-                "button": 95,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_weapon_max"
             },
             {
-                "name": "Weapons - Set to Min",
+                "name": "Remap - Control No Longer Available",
                 "id": 25,
                 "type": "button",
-                "vjoy": 3,
-                "button": 96,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_weapon_min"
             },
             {
-                "name": "Weapons - Increase (Tap) / Set to Max (Hold)",
+                "name": "Remap - Control No Longer Available",
                 "id": 30,
                 "type": "button",
-                "vjoy": 3,
-                "button": 97,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_weapon_combined_increase_max"
             },
             {
-                "name": "Weapons - Decrease (Tap) / Set to Min (Hold)",
+                "name": "Remap - Control No Longer Available",
                 "id": 35,
                 "type": "button",
-                "vjoy": 3,
-                "button": 98,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_weapon_combined_decrease_min"
             },
             {
-                "name": "Engines - Increase",
+                "name": "Remap - Control No Longer Available",
                 "id": 40,
                 "type": "button",
-                "vjoy": 4,
-                "button": 1,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_engine_increase"
             },
             {
-                "name": "Engines - Decrease",
+                "name": "Remap - Control No Longer Available",
                 "id": 45,
                 "type": "button",
-                "vjoy": 4,
-                "button": 2,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_engine_decrease"
             },
             {
-                "name": "Engines - Set to Max",
+                "name": "Remap - Control No Longer Available",
                 "id": 50,
                 "type": "button",
-                "vjoy": 4,
-                "button": 3,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_engine_max"
             },
             {
-                "name": "Engines - Set to Min",
+                "name": "Remap - Control No Longer Available",
                 "id": 55,
                 "type": "button",
-                "vjoy": 4,
-                "button": 4,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_engine_min"
             },
             {
-                "name": "Engines - Increase (Tap) / Set to Max (Hold)",
+                "name": "Remap - Control No Longer Available",
                 "id": 60,
                 "type": "button",
-                "vjoy": 4,
-                "button": 5,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_engine_combined_increase_max"
             },
             {
-                "name": "Engines - Decrease (Tap) / Set to Min (Hold)",
+                "name": "Remap - Control No Longer Available",
                 "id": 65,
                 "type": "button",
-                "vjoy": 4,
-                "button": 6,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_engine_combined_decrease_min"
             },
             {
-                "name": "Shields - Increase",
+                "name": "Remap - Control No Longer Available",
                 "id": 70,
                 "type": "button",
-                "vjoy": 4,
-                "button": 7,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_shield_increase"
             },
             {
-                "name": "Shields - Decrease",
+                "name": "Remap - Control No Longer Available",
                 "id": 75,
                 "type": "button",
-                "vjoy": 4,
-                "button": 8,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_shield_decrease"
             },
             {
-                "name": "Shields - Set to Max",
+                "name": "Remap - Control No Longer Available",
                 "id": 80,
                 "type": "button",
-                "vjoy": 4,
-                "button": 9,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_shield_max"
             },
             {
-                "name": "Shields - Set to Min",
+                "name": "Remap - Control No Longer Available",
                 "id": 85,
                 "type": "button",
-                "vjoy": 4,
-                "button": 10,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_shield_min"
             },
             {
-                "name": "Shields - Increase (Tap) / Set to Max (Hold)",
+                "name": "Remap - Control No Longer Available",
                 "id": 90,
                 "type": "button",
-                "vjoy": 4,
-                "button": 11,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_shield_combined_increase_max"
             },
             {
-                "name": "Shields - Decrease (Tap) / Set to Min (Hold)",
+                "name": "Remap - Control No Longer Available",
                 "id": 95,
                 "type": "button",
-                "vjoy": 4,
-                "button": 12,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_shield_combined_decrease_min"
             },
             {
-                "name": "Reset Assignments",
+                "name": "Remap - Control No Longer Available",
                 "id": 100,
                 "type": "button",
-                "vjoy": 4,
-                "button": 13,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_capacitor_assignment",
                 "action": "v_capacitor_assignment_reset"
             }
@@ -3258,7 +4073,7 @@
                 "id": 10,
                 "type": "button",
                 "vjoy": 4,
-                "button": 14,
+                "button": 66,
                 "actionmap": "spaceship_power",
                 "action": "v_power_toggle"
             },
@@ -3267,7 +4082,7 @@
                 "id": 15,
                 "type": "button",
                 "vjoy": 4,
-                "button": 15,
+                "button": 67,
                 "actionmap": "spaceship_power",
                 "action": "v_power_set_on"
             },
@@ -3276,7 +4091,7 @@
                 "id": 20,
                 "type": "button",
                 "vjoy": 4,
-                "button": 16,
+                "button": 68,
                 "actionmap": "spaceship_power",
                 "action": "v_power_set_off"
             },
@@ -3285,7 +4100,7 @@
                 "id": 25,
                 "type": "button",
                 "vjoy": 4,
-                "button": 17,
+                "button": 69,
                 "actionmap": "spaceship_power",
                 "action": "v_power_toggle_thrusters"
             },
@@ -3294,7 +4109,7 @@
                 "id": 30,
                 "type": "button",
                 "vjoy": 4,
-                "button": 18,
+                "button": 70,
                 "actionmap": "spaceship_power",
                 "action": "v_power_set_thrusters_on"
             },
@@ -3303,7 +4118,7 @@
                 "id": 35,
                 "type": "button",
                 "vjoy": 4,
-                "button": 19,
+                "button": 71,
                 "actionmap": "spaceship_power",
                 "action": "v_power_set_thrusters_off"
             },
@@ -3312,7 +4127,7 @@
                 "id": 40,
                 "type": "button",
                 "vjoy": 4,
-                "button": 20,
+                "button": 72,
                 "actionmap": "spaceship_power",
                 "action": "v_power_toggle_shields"
             },
@@ -3321,7 +4136,7 @@
                 "id": 45,
                 "type": "button",
                 "vjoy": 4,
-                "button": 21,
+                "button": 73,
                 "actionmap": "spaceship_power",
                 "action": "v_power_set_shields_on"
             },
@@ -3330,7 +4145,7 @@
                 "id": 50,
                 "type": "button",
                 "vjoy": 4,
-                "button": 22,
+                "button": 74,
                 "actionmap": "spaceship_power",
                 "action": "v_power_set_shields_off"
             },
@@ -3339,7 +4154,7 @@
                 "id": 55,
                 "type": "button",
                 "vjoy": 4,
-                "button": 23,
+                "button": 75,
                 "actionmap": "spaceship_power",
                 "action": "v_power_toggle_weapons"
             },
@@ -3348,7 +4163,7 @@
                 "id": 60,
                 "type": "button",
                 "vjoy": 4,
-                "button": 24,
+                "button": 76,
                 "actionmap": "spaceship_power",
                 "action": "v_power_set_weapons_on"
             },
@@ -3357,7 +4172,7 @@
                 "id": 65,
                 "type": "button",
                 "vjoy": 4,
-                "button": 25,
+                "button": 77,
                 "actionmap": "spaceship_power",
                 "action": "v_power_set_weapons_off"
             },
@@ -3366,7 +4181,7 @@
                 "id": 70,
                 "type": "button",
                 "vjoy": 4,
-                "button": 26,
+                "button": 78,
                 "actionmap": "spaceship_power",
                 "action": "v_power_throttle_down"
             },
@@ -3375,7 +4190,7 @@
                 "id": 75,
                 "type": "button",
                 "vjoy": 4,
-                "button": 27,
+                "button": 79,
                 "actionmap": "spaceship_power",
                 "action": "v_power_throttle_min"
             },
@@ -3384,7 +4199,7 @@
                 "id": 80,
                 "type": "button",
                 "vjoy": 4,
-                "button": 28,
+                "button": 80,
                 "actionmap": "spaceship_power",
                 "action": "v_power_throttle_up"
             },
@@ -3393,9 +4208,126 @@
                 "id": 85,
                 "type": "button",
                 "vjoy": 4,
-                "button": 29,
+                "button": 81,
                 "actionmap": "spaceship_power",
                 "action": "v_power_throttle_max"
+            },
+            {
+                "name": "Engines - Increase (tap)",
+                "id": 90,
+                "type": "button",
+                "vjoy": 4,
+                "button": 82,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_engine_increase"
+            },
+            {
+                "name": "Engines - Decrease (tap)",
+                "id": 95,
+                "type": "button",
+                "vjoy": 4,
+                "button": 83,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_engine_decrease"
+            },
+            {
+                "name": "Engines - Set to Max (hold)",
+                "id": 100,
+                "type": "button",
+                "vjoy": 4,
+                "button": 84,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_engine_max"
+            },
+            {
+                "name": "Engines - Set to Min (hold)",
+                "id": 105,
+                "type": "button",
+                "vjoy": 4,
+                "button": 85,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_engine_min"
+            },
+            {
+                "name": "Shields - Increase (tap)",
+                "id": 110,
+                "type": "button",
+                "vjoy": 4,
+                "button": 86,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_shields_increase"
+            },
+            {
+                "name": "Shields - Decrease (tap)",
+                "id": 115,
+                "type": "button",
+                "vjoy": 4,
+                "button": 87,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_shields_decrease"
+            },
+            {
+                "name": "Shields - Set to Max (hold)",
+                "id": 120,
+                "type": "button",
+                "vjoy": 4,
+                "button": 88,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_shields_max"
+            },
+            {
+                "name": "Shields - Set to Min (hold)",
+                "id": 125,
+                "type": "button",
+                "vjoy": 4,
+                "button": 89,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_shields_min"
+            },
+            {
+                "name": "Weapons - Increase (tap)",
+                "id": 130,
+                "type": "button",
+                "vjoy": 4,
+                "button": 90,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_weapons_increase"
+            },
+            {
+                "name": "Weapons - Decrease (tap)",
+                "id": 135,
+                "type": "button",
+                "vjoy": 4,
+                "button": 91,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_weapons_decrease"
+            },
+            {
+                "name": "Weapons - Set to Max (hold)",
+                "id": 140,
+                "type": "button",
+                "vjoy": 4,
+                "button": 92,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_weapons_max"
+            },
+            {
+                "name": "Weapons - Set to Min (hold)",
+                "id": 145,
+                "type": "button",
+                "vjoy": 4,
+                "button": 93,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_weapons_min"
+            },
+            {
+                "name": "Reset Assignments",
+                "id": 150,
+                "type": "button",
+                "vjoy": 4,
+                "button": 94,
+                "actionmap": "spaceship_power",
+                "action": "v_engineering_assignment_reset"
             }
         ]
     },
@@ -3408,7 +4340,7 @@
                 "id": 10,
                 "type": "button",
                 "vjoy": 4,
-                "button": 30,
+                "button": 95,
                 "actionmap": "spaceship_hud",
                 "action": "v_cycle_pitch_ladder_mode"
             },
@@ -3417,7 +4349,7 @@
                 "id": 15,
                 "type": "button",
                 "vjoy": 4,
-                "button": 31,
+                "button": 96,
                 "actionmap": "spaceship_hud",
                 "action": "v_hud_open_scoreboard"
             },
@@ -3426,7 +4358,7 @@
                 "id": 20,
                 "type": "button",
                 "vjoy": 4,
-                "button": 32,
+                "button": 97,
                 "actionmap": "spaceship_hud",
                 "action": "v_starmap"
             },
@@ -3434,8 +4366,8 @@
                 "name": "Wipe Helmet Visor",
                 "id": 25,
                 "type": "button",
-                "vjoy": 4,
-                "button": 33,
+                "vjoy": 5,
+                "button": 1,
                 "actionmap": "spaceship_hud",
                 "action": "visor_wipe"
             }
@@ -3449,10 +4381,28 @@
                 "name": "Headlights (toggle)",
                 "id": 10,
                 "type": "button",
-                "vjoy": 4,
-                "button": 34,
+                "vjoy": 5,
+                "button": 2,
                 "actionmap": "lights_controller",
                 "action": "v_lights"
+            },
+            {
+                "name": "Headlights - On",
+                "id": 15,
+                "type": "button",
+                "vjoy": 5,
+                "button": 3,
+                "actionmap": "lights_controller",
+                "action": "v_lights_on"
+            },
+            {
+                "name": "Headlights - Off",
+                "id": 20,
+                "type": "button",
+                "vjoy": 5,
+                "button": 4,
+                "actionmap": "lights_controller",
+                "action": "v_lights_off"
             }
         ]
     },
@@ -3464,8 +4414,8 @@
                 "name": "Horn",
                 "id": 10,
                 "type": "button",
-                "vjoy": 4,
-                "button": 35,
+                "vjoy": 5,
+                "button": 5,
                 "actionmap": "vehicle_general",
                 "action": "v_horn"
             },
@@ -3473,8 +4423,8 @@
                 "name": "Cycle Camera View",
                 "id": 15,
                 "type": "button",
-                "vjoy": 4,
-                "button": 36,
+                "vjoy": 5,
+                "button": 6,
                 "actionmap": "vehicle_general",
                 "action": "v_view_cycle_fwd"
             },
@@ -3482,8 +4432,8 @@
                 "name": "Zoom In (3rd Person View)",
                 "id": 20,
                 "type": "button",
-                "vjoy": 4,
-                "button": 37,
+                "vjoy": 5,
+                "button": 7,
                 "actionmap": "vehicle_general",
                 "action": "v_view_zoom_in"
             },
@@ -3491,8 +4441,8 @@
                 "name": "Zoom Out (3rd Person View)",
                 "id": 25,
                 "type": "button",
-                "vjoy": 4,
-                "button": 38,
+                "vjoy": 5,
+                "button": 8,
                 "actionmap": "vehicle_general",
                 "action": "v_view_zoom_out"
             },
@@ -3500,8 +4450,8 @@
                 "name": "Look Left/Right",
                 "id": 30,
                 "type": "axis",
-                "vjoy": 4,
-                "axis": 1,
+                "vjoy": 3,
+                "axis": 8,
                 "actionmap": "vehicle_general",
                 "action": "v_view_yaw"
             },
@@ -3510,7 +4460,7 @@
                 "id": 35,
                 "type": "axis",
                 "vjoy": 4,
-                "axis": 2,
+                "axis": 1,
                 "actionmap": "vehicle_general",
                 "action": "v_view_pitch"
             },
@@ -3518,35 +4468,38 @@
                 "name": "Freelook (Hold)",
                 "id": 40,
                 "type": "button",
-                "vjoy": 4,
-                "button": 39,
+                "vjoy": 5,
+                "button": 9,
                 "actionmap": "vehicle_general",
                 "action": "v_view_freelook_mode"
             },
             {
-                "name": "Fire Weapon All",
+                "name": "Remap - Control No Longer Available",
                 "id": 45,
                 "type": "button",
-                "vjoy": 4,
-                "button": 40,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_general",
                 "action": "v_attack_all"
             },
             {
-                "name": "Fire Weapon Group 1",
+                "name": "Remap - Control No Longer Available",
                 "id": 50,
                 "type": "button",
-                "vjoy": 4,
-                "button": 41,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_general",
                 "action": "v_attack_group1"
             },
             {
-                "name": "Fire Weapon Group 2",
+                "name": "Remap - Control No Longer Available",
                 "id": 55,
                 "type": "button",
-                "vjoy": 4,
-                "button": 42,
+                "vjoy": 0,
+                "button": 0,
+                "disabled": true,
                 "actionmap": "vehicle_general",
                 "action": "v_attack_group2"
             },
@@ -3554,8 +4507,8 @@
                 "name": "Flight/Systems Ready",
                 "id": 60,
                 "type": "button",
-                "vjoy": 4,
-                "button": 43,
+                "vjoy": 5,
+                "button": 10,
                 "actionmap": "vehicle_general",
                 "action": "v_flightready"
             },
@@ -3563,8 +4516,8 @@
                 "name": "Open/Close Doors Toggle",
                 "id": 65,
                 "type": "button",
-                "vjoy": 4,
-                "button": 44,
+                "vjoy": 5,
+                "button": 11,
                 "actionmap": "vehicle_general",
                 "action": "v_toggle_all_doors"
             },
@@ -3572,8 +4525,8 @@
                 "name": "Open All Doors",
                 "id": 70,
                 "type": "button",
-                "vjoy": 4,
-                "button": 45,
+                "vjoy": 5,
+                "button": 12,
                 "actionmap": "vehicle_general",
                 "action": "v_open_all_doors"
             },
@@ -3581,8 +4534,8 @@
                 "name": "Close All Doors",
                 "id": 75,
                 "type": "button",
-                "vjoy": 4,
-                "button": 46,
+                "vjoy": 5,
+                "button": 13,
                 "actionmap": "vehicle_general",
                 "action": "v_close_all_doors"
             },
@@ -3590,8 +4543,8 @@
                 "name": "Lock/Unlock Doors Toggle",
                 "id": 80,
                 "type": "button",
-                "vjoy": 4,
-                "button": 47,
+                "vjoy": 5,
+                "button": 14,
                 "actionmap": "vehicle_general",
                 "action": "v_toggle_all_doorlocks"
             },
@@ -3599,8 +4552,8 @@
                 "name": "Lock All Doors",
                 "id": 85,
                 "type": "button",
-                "vjoy": 4,
-                "button": 48,
+                "vjoy": 5,
+                "button": 15,
                 "actionmap": "vehicle_general",
                 "action": "v_lock_all_doors"
             },
@@ -3608,8 +4561,8 @@
                 "name": "Unlock All Doors",
                 "id": 90,
                 "type": "button",
-                "vjoy": 4,
-                "button": 49,
+                "vjoy": 5,
+                "button": 16,
                 "actionmap": "vehicle_general",
                 "action": "v_unlock_all_doors"
             },
@@ -3617,8 +4570,8 @@
                 "name": "Port Lock Toggle All",
                 "id": 95,
                 "type": "button",
-                "vjoy": 4,
-                "button": 50,
+                "vjoy": 5,
+                "button": 17,
                 "actionmap": "vehicle_general",
                 "action": "v_toggle_all_portlocks"
             },
@@ -3626,8 +4579,8 @@
                 "name": "Port Lock All",
                 "id": 100,
                 "type": "button",
-                "vjoy": 4,
-                "button": 51,
+                "vjoy": 5,
+                "button": 18,
                 "actionmap": "vehicle_general",
                 "action": "v_lock_all_ports"
             },
@@ -3635,8 +4588,8 @@
                 "name": "Port Unlock All",
                 "id": 105,
                 "type": "button",
-                "vjoy": 4,
-                "button": 52,
+                "vjoy": 5,
+                "button": 19,
                 "actionmap": "vehicle_general",
                 "action": "v_unlock_all_ports"
             },
@@ -3644,8 +4597,8 @@
                 "name": "Map",
                 "id": 110,
                 "type": "button",
-                "vjoy": 4,
-                "button": 53,
+                "vjoy": 5,
+                "button": 20,
                 "actionmap": "vehicle_general",
                 "action": "v_starmap"
             },
@@ -3653,8 +4606,8 @@
                 "name": "Wipe Helmet Visor",
                 "id": 115,
                 "type": "button",
-                "vjoy": 4,
-                "button": 54,
+                "vjoy": 5,
+                "button": 21,
                 "actionmap": "vehicle_general",
                 "action": "visor_wipe"
             }
@@ -3668,8 +4621,8 @@
                 "name": "Drive Forward",
                 "id": 10,
                 "type": "button",
-                "vjoy": 4,
-                "button": 55,
+                "vjoy": 5,
+                "button": 22,
                 "actionmap": "vehicle_driver",
                 "action": "v_move_forward"
             },
@@ -3677,8 +4630,8 @@
                 "name": "Drive Backward",
                 "id": 15,
                 "type": "button",
-                "vjoy": 4,
-                "button": 56,
+                "vjoy": 5,
+                "button": 23,
                 "actionmap": "vehicle_driver",
                 "action": "v_move_back"
             },
@@ -3687,7 +4640,7 @@
                 "id": 20,
                 "type": "axis",
                 "vjoy": 4,
-                "axis": 3,
+                "axis": 2,
                 "actionmap": "vehicle_driver",
                 "action": "v_move"
             },
@@ -3695,8 +4648,8 @@
                 "name": "Turn Left",
                 "id": 25,
                 "type": "button",
-                "vjoy": 4,
-                "button": 57,
+                "vjoy": 5,
+                "button": 24,
                 "actionmap": "vehicle_driver",
                 "action": "v_yaw_left"
             },
@@ -3704,8 +4657,8 @@
                 "name": "Turn Right",
                 "id": 30,
                 "type": "button",
-                "vjoy": 4,
-                "button": 58,
+                "vjoy": 5,
+                "button": 25,
                 "actionmap": "vehicle_driver",
                 "action": "v_yaw_right"
             },
@@ -3714,7 +4667,7 @@
                 "id": 35,
                 "type": "axis",
                 "vjoy": 4,
-                "axis": 4,
+                "axis": 3,
                 "actionmap": "vehicle_driver",
                 "action": "v_yaw"
             },
@@ -3722,8 +4675,8 @@
                 "name": "Pitch Up",
                 "id": 40,
                 "type": "button",
-                "vjoy": 4,
-                "button": 59,
+                "vjoy": 5,
+                "button": 26,
                 "actionmap": "vehicle_driver",
                 "action": "v_pitch_up"
             },
@@ -3731,8 +4684,8 @@
                 "name": "Pitch Down",
                 "id": 45,
                 "type": "button",
-                "vjoy": 4,
-                "button": 60,
+                "vjoy": 5,
+                "button": 27,
                 "actionmap": "vehicle_driver",
                 "action": "v_pitch_down"
             },
@@ -3741,7 +4694,7 @@
                 "id": 50,
                 "type": "axis",
                 "vjoy": 4,
-                "axis": 5,
+                "axis": 4,
                 "actionmap": "vehicle_driver",
                 "action": "v_pitch"
             },
@@ -3749,8 +4702,8 @@
                 "name": "Brake",
                 "id": 55,
                 "type": "button",
-                "vjoy": 4,
-                "button": 61,
+                "vjoy": 5,
+                "button": 28,
                 "actionmap": "vehicle_driver",
                 "action": "v_brake"
             },
@@ -3759,7 +4712,7 @@
                 "id": 60,
                 "type": "axis",
                 "vjoy": 4,
-                "axis": 6,
+                "axis": 5,
                 "actionmap": "vehicle_driver",
                 "action": "v_view_dynamic_zoom_rel"
             },
@@ -3767,8 +4720,8 @@
                 "name": "Dynamic Zoom In (relative)",
                 "id": 65,
                 "type": "button",
-                "vjoy": 4,
-                "button": 62,
+                "vjoy": 5,
+                "button": 29,
                 "actionmap": "vehicle_driver",
                 "action": "v_view_dynamic_zoom_rel_in"
             },
@@ -3776,8 +4729,8 @@
                 "name": "Dynamic Zoom Out (relative)",
                 "id": 70,
                 "type": "button",
-                "vjoy": 4,
-                "button": 63,
+                "vjoy": 5,
+                "button": 30,
                 "actionmap": "vehicle_driver",
                 "action": "v_view_dynamic_zoom_rel_out"
             },
@@ -3786,7 +4739,7 @@
                 "id": 75,
                 "type": "axis",
                 "vjoy": 4,
-                "axis": 7,
+                "axis": 6,
                 "actionmap": "vehicle_driver",
                 "action": "v_view_dynamic_zoom_abs"
             },
@@ -3794,8 +4747,8 @@
                 "name": "Dynamic Zoom Toggle (absolute)",
                 "id": 80,
                 "type": "button",
-                "vjoy": 4,
-                "button": 64,
+                "vjoy": 5,
+                "button": 31,
                 "actionmap": "vehicle_driver",
                 "action": "v_view_dynamic_zoom_abs_toggle"
             },
@@ -3803,8 +4756,8 @@
                 "name": "Boost",
                 "id": 85,
                 "type": "button",
-                "vjoy": 4,
-                "button": 65,
+                "vjoy": 5,
+                "button": 32,
                 "actionmap": "vehicle_driver",
                 "action": "v_boost"
             },
@@ -3812,8 +4765,8 @@
                 "name": "Lock Pitch/Yaw Movement (toggle/hold)",
                 "id": 90,
                 "type": "button",
-                "vjoy": 4,
-                "button": 66,
+                "vjoy": 5,
+                "button": 33,
                 "actionmap": "vehicle_driver",
                 "action": "v_lock_rotation"
             },
@@ -3821,8 +4774,8 @@
                 "name": "Toggle Brake on Idle",
                 "id": 95,
                 "type": "button",
-                "vjoy": 4,
-                "button": 67,
+                "vjoy": 5,
+                "button": 34,
                 "actionmap": "vehicle_driver",
                 "action": "v_mgv_switch_brake_on_idle"
             }
@@ -3836,8 +4789,8 @@
                 "name": "Spectator Camera Next Target",
                 "id": 10,
                 "type": "button",
-                "vjoy": 4,
-                "button": 68,
+                "vjoy": 5,
+                "button": 35,
                 "actionmap": "spectator",
                 "action": "spectate_next_target"
             },
@@ -3845,8 +4798,8 @@
                 "name": "Spectator Camera Previous Target",
                 "id": 15,
                 "type": "button",
-                "vjoy": 4,
-                "button": 69,
+                "vjoy": 5,
+                "button": 36,
                 "actionmap": "spectator",
                 "action": "spectate_prev_target"
             },
@@ -3854,8 +4807,8 @@
                 "name": "Spectator Camera Lock Target",
                 "id": 20,
                 "type": "button",
-                "vjoy": 4,
-                "button": 70,
+                "vjoy": 5,
+                "button": 37,
                 "actionmap": "spectator",
                 "action": "spectate_toggle_lock_target"
             },
@@ -3864,7 +4817,7 @@
                 "id": 25,
                 "type": "axis",
                 "vjoy": 4,
-                "axis": 8,
+                "axis": 7,
                 "actionmap": "spectator",
                 "action": "spectate_zoom"
             },
@@ -3872,8 +4825,8 @@
                 "name": "Spectator Camera Zoom In",
                 "id": 30,
                 "type": "button",
-                "vjoy": 4,
-                "button": 71,
+                "vjoy": 5,
+                "button": 38,
                 "actionmap": "spectator",
                 "action": "spectate_zoom_in"
             },
@@ -3881,8 +4834,8 @@
                 "name": "Spectator Camera Zoom Out",
                 "id": 35,
                 "type": "button",
-                "vjoy": 4,
-                "button": 72,
+                "vjoy": 5,
+                "button": 39,
                 "actionmap": "spectator",
                 "action": "spectate_zoom_out"
             },
@@ -3890,8 +4843,8 @@
                 "name": "Spectator Camera Rotate Yaw",
                 "id": 40,
                 "type": "axis",
-                "vjoy": 5,
-                "axis": 1,
+                "vjoy": 4,
+                "axis": 8,
                 "actionmap": "spectator",
                 "action": "spectate_rotateyaw"
             },
@@ -3900,7 +4853,7 @@
                 "id": 45,
                 "type": "axis",
                 "vjoy": 5,
-                "axis": 2,
+                "axis": 1,
                 "actionmap": "spectator",
                 "action": "spectate_rotatepitch"
             },
@@ -3909,7 +4862,7 @@
                 "id": 50,
                 "type": "axis",
                 "vjoy": 5,
-                "axis": 3,
+                "axis": 2,
                 "actionmap": "spectator",
                 "action": "spectate_rotateyaw_mouse"
             },
@@ -3918,7 +4871,7 @@
                 "id": 55,
                 "type": "axis",
                 "vjoy": 5,
-                "axis": 4,
+                "axis": 3,
                 "actionmap": "spectator",
                 "action": "spectate_rotatepitch_mouse"
             },
@@ -3926,8 +4879,8 @@
                 "name": "Spectator Camera HUD (toggle)",
                 "id": 60,
                 "type": "button",
-                "vjoy": 4,
-                "button": 73,
+                "vjoy": 5,
+                "button": 40,
                 "actionmap": "spectator",
                 "action": "spectate_toggle_hud"
             },
@@ -3935,8 +4888,8 @@
                 "name": "Spectator Camera Mode - Next",
                 "id": 65,
                 "type": "button",
-                "vjoy": 4,
-                "button": 74,
+                "vjoy": 5,
+                "button": 41,
                 "actionmap": "spectator",
                 "action": "spectate_gen_nextmode"
             },
@@ -3944,8 +4897,8 @@
                 "name": "Spectator Camera Mode - Previous",
                 "id": 70,
                 "type": "button",
-                "vjoy": 4,
-                "button": 75,
+                "vjoy": 5,
+                "button": 42,
                 "actionmap": "spectator",
                 "action": "spectate_gen_prevmode"
             }
@@ -3959,8 +4912,8 @@
                 "name": "Re-Spawn",
                 "id": 10,
                 "type": "button",
-                "vjoy": 4,
-                "button": 76,
+                "vjoy": 5,
+                "button": 43,
                 "actionmap": "default",
                 "action": "respawn"
             },
@@ -3968,8 +4921,8 @@
                 "name": "Exit Seat",
                 "id": 15,
                 "type": "button",
-                "vjoy": 4,
-                "button": 77,
+                "vjoy": 5,
+                "button": 44,
                 "actionmap": "default",
                 "action": "pl_exit"
             },
@@ -3977,8 +4930,8 @@
                 "name": "Notification Accept",
                 "id": 17,
                 "type": "button",
-                "vjoy": 4,
-                "button": 78,
+                "vjoy": 5,
+                "button": 45,
                 "actionmap": "default",
                 "action": "notification_accept"
             },
@@ -3986,8 +4939,8 @@
                 "name": "Notification Decline",
                 "id": 18,
                 "type": "button",
-                "vjoy": 4,
-                "button": 79,
+                "vjoy": 5,
+                "button": 46,
                 "actionmap": "default",
                 "action": "notification_decline"
             },
@@ -3995,8 +4948,8 @@
                 "name": "CommLink App",
                 "id": 20,
                 "type": "button",
-                "vjoy": 4,
-                "button": 80,
+                "vjoy": 5,
+                "button": 47,
                 "actionmap": "default",
                 "action": "toggle_contact"
             },
@@ -4004,8 +4957,8 @@
                 "name": "Chat Window",
                 "id": 25,
                 "type": "button",
-                "vjoy": 4,
-                "button": 81,
+                "vjoy": 5,
+                "button": 48,
                 "actionmap": "default",
                 "action": "toggle_chat"
             },
@@ -4013,8 +4966,8 @@
                 "name": "Chat Window Focus",
                 "id": 30,
                 "type": "button",
-                "vjoy": 4,
-                "button": 82,
+                "vjoy": 5,
+                "button": 49,
                 "actionmap": "default",
                 "action": "focus_on_chat_textinput"
             },
@@ -4022,8 +4975,8 @@
                 "name": "Chat Cycle Lobby",
                 "id": 35,
                 "type": "button",
-                "vjoy": 4,
-                "button": 83,
+                "vjoy": 5,
+                "button": 50,
                 "actionmap": "default",
                 "action": "cycle_chat_lobby"
             }
@@ -4037,8 +4990,8 @@
                 "name": "Enable Head Tracking (toggle)",
                 "id": 10,
                 "type": "button",
-                "vjoy": 4,
-                "button": 84,
+                "vjoy": 5,
+                "button": 51,
                 "actionmap": "player_input_optical_tracking",
                 "action": "headtrack_enabled"
             },
@@ -4046,8 +4999,8 @@
                 "name": "Head Tracking (hold)",
                 "id": 15,
                 "type": "button",
-                "vjoy": 4,
-                "button": 85,
+                "vjoy": 5,
+                "button": 52,
                 "actionmap": "player_input_optical_tracking",
                 "action": "headtrack_hold"
             },
@@ -4055,8 +5008,8 @@
                 "name": "Recenter Head Tracking Device (except TrackIR)",
                 "id": 20,
                 "type": "button",
-                "vjoy": 4,
-                "button": 86,
+                "vjoy": 5,
+                "button": 53,
                 "actionmap": "player_input_optical_tracking",
                 "action": "headtrack_recenter_device"
             },
@@ -4064,8 +5017,8 @@
                 "name": "Enable/Disable Head Tracking for 3rd Person Camera",
                 "id": 25,
                 "type": "button",
-                "vjoy": 4,
-                "button": 87,
+                "vjoy": 5,
+                "button": 54,
                 "actionmap": "player_input_optical_tracking",
                 "action": "headtrack_camera_enabled"
             },
@@ -4073,8 +5026,8 @@
                 "name": "VOIP Push to Talk",
                 "id": 30,
                 "type": "button",
-                "vjoy": 4,
-                "button": 88,
+                "vjoy": 5,
+                "button": 55,
                 "actionmap": "player_input_optical_tracking",
                 "action": "foip_pushtotalk"
             },
@@ -4082,8 +5035,8 @@
                 "name": "VOIP Push to Talk (Proximity Only)",
                 "id": 35,
                 "type": "button",
-                "vjoy": 4,
-                "button": 89,
+                "vjoy": 5,
+                "button": 56,
                 "actionmap": "player_input_optical_tracking",
                 "action": "foip_pushtotalk_proximity"
             },
@@ -4091,8 +5044,8 @@
                 "name": "FOIP Selfie Cam",
                 "id": 40,
                 "type": "button",
-                "vjoy": 4,
-                "button": 90,
+                "vjoy": 5,
+                "button": 57,
                 "actionmap": "player_input_optical_tracking",
                 "action": "foip_viewownplayer"
             },
@@ -4100,8 +5053,8 @@
                 "name": "FOIP Recalibrate",
                 "id": 45,
                 "type": "button",
-                "vjoy": 4,
-                "button": 91,
+                "vjoy": 5,
+                "button": 58,
                 "actionmap": "player_input_optical_tracking",
                 "action": "foip_recalibrate"
             },
@@ -4109,8 +5062,8 @@
                 "name": "Cycle through Audio Channels",
                 "id": 50,
                 "type": "button",
-                "vjoy": 4,
-                "button": 92,
+                "vjoy": 5,
+                "button": 59,
                 "actionmap": "player_input_optical_tracking",
                 "action": "foip_cyclechannel"
             }
@@ -4124,8 +5077,8 @@
                 "name": "Focus",
                 "id": 10,
                 "type": "button",
-                "vjoy": 4,
-                "button": 93,
+                "vjoy": 5,
+                "button": 60,
                 "actionmap": "player_choice",
                 "action": "pc_focus"
             },
@@ -4133,19 +5086,142 @@
                 "name": "Interaction Mode",
                 "id": 15,
                 "type": "button",
-                "vjoy": 4,
-                "button": 94,
+                "vjoy": 5,
+                "button": 61,
                 "actionmap": "player_choice",
                 "action": "pc_interaction_mode"
+            },
+            {
+                "name": "Interaction Select",
+                "id": 16,
+                "type": "button",
+                "vjoy": 5,
+                "button": 62,
+                "actionmap": "player_choice",
+                "action": "pc_interaction_select"
             },
             {
                 "name": "Activate Inner Thought",
                 "id": 20,
                 "type": "button",
-                "vjoy": 4,
-                "button": 95,
+                "vjoy": 5,
+                "button": 63,
                 "actionmap": "player_choice",
                 "action": "pc_select"
+            },
+            {
+                "name": "Interaction Mode Zoom In",
+                "id": 25,
+                "type": "button",
+                "vjoy": 5,
+                "button": 64,
+                "actionmap": "player_choice",
+                "action": "pc_zoom_in"
+            },
+            {
+                "name": "Interaction Mode Zoom Out",
+                "id": 30,
+                "type": "button",
+                "vjoy": 5,
+                "button": 65,
+                "actionmap": "player_choice",
+                "action": "pc_zoom_out"
+            },
+            {
+                "name": "MFD Left",
+                "id": 35,
+                "type": "button",
+                "vjoy": 5,
+                "button": 66,
+                "actionmap": "player_choice",
+                "action": "pc_screen_focus_left"
+            },
+            {
+                "name": "MFD Right",
+                "id": 40,
+                "type": "button",
+                "vjoy": 5,
+                "button": 67,
+                "actionmap": "player_choice",
+                "action": "pc_screen_focus_right"
+            },
+            {
+                "name": "MFD Up",
+                "id": 45,
+                "type": "button",
+                "vjoy": 5,
+                "button": 68,
+                "actionmap": "player_choice",
+                "action": "pc_screen_focus_up"
+            },
+            {
+                "name": "MFD Down",
+                "id": 50,
+                "type": "button",
+                "vjoy": 5,
+                "button": 69,
+                "actionmap": "player_choice",
+                "action": "pc_screen_focus_down"
+            },
+            {
+                "name": "Exit",
+                "id": 55,
+                "type": "button",
+                "vjoy": 5,
+                "button": 70,
+                "actionmap": "player_choice",
+                "action": "pc_personal_back"
+            }
+        ]
+    },
+    {
+        "category_id": 160,
+        "name": "Camera - Advanced Camera Controls",
+        "values": [
+            {
+                "name": "Increase FOV",
+                "id": 10,
+                "type": "button",
+                "vjoy": 5,
+                "button": 71,
+                "actionmap": "view_director_mode",
+                "action": "view_fov_in"
+            },
+            {
+                "name": "Decrease FOV",
+                "id": 15,
+                "type": "button",
+                "vjoy": 5,
+                "button": 72,
+                "actionmap": "view_director_mode",
+                "action": "view_fov_out"
+            },
+            {
+                "name": "Increase DoF",
+                "id": 16,
+                "type": "button",
+                "vjoy": 5,
+                "button": 73,
+                "actionmap": "view_director_mode",
+                "action": "view_fstop_in"
+            },
+            {
+                "name": "Decrease DoF",
+                "id": 20,
+                "type": "button",
+                "vjoy": 5,
+                "button": 74,
+                "actionmap": "view_director_mode",
+                "action": "view_fstop_out"
+            },
+            {
+                "name": "Reset Current View",
+                "id": 25,
+                "type": "button",
+                "vjoy": 5,
+                "button": 75,
+                "actionmap": "view_director_mode",
+                "action": "view_restore_defaults"
             }
         ]
     }
