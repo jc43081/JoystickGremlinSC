@@ -227,7 +227,7 @@ def create_document():
             #"Id": "6472cca8-d352-4186-8a98-ca6ba33d083c", # 13.40.6ex
             #"Id": "7cdb8375-66a1-4114-be79-b17027e8c0df", # 13.40.7ex
             #"Id": "739095a7-19cc-4154-ac9c-c51f5f516527", # 13.40.8ex
-            "ProductCode": "e1787f30-3861-464d-9a6a-1c2c1c809fcf", # 13.40.14-sc.2
+            "ProductCode": "c9ea1027-2155-4a81-adb3-9267e6db52da", # 13.40.14-sc.3
             "UpgradeCode": "1f5d614b-6cec-47d8-90e3-40f7e7458f7a",
             "Language": "1033",
             "Codepage": "1252",
