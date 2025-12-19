@@ -705,6 +705,9 @@ class InputItem():
     def remove_container(self, container):
         self._containers.remove(container)
 
+    def remove_all_containers(self):
+        self._containers = [] 
+
     def get_containers(self):
         return self._containers
     
