@@ -36,7 +36,7 @@ class ControlsMappingReader(metaclass=Singleton):
                     util.display_error("Unable to read in Controls Mapping. Make sure the Controls Mappings Settings is correct and file is available.")
                     event_listener = event_handler.EventListener()
                     event_listener.terminate()
-                    raise error.GremlinError(
+                    raise error.ProfileError(
                         "Unable to read in Controls Mapping"
                     )
                 util.log("ControlsMappingReader::mapping read successfully") 
