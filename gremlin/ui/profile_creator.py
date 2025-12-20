@@ -176,7 +176,7 @@ class ProfileCreator(gremlin.ui.ui_common.BaseDialogUi):
             for mode in device.modes.values():
                 for input_items in mode.config.values():
                     for input_item in input_items.values():
-                        input_item.containers = []
+                        input_item.remove_all_containers()
                         input_item.description = []
                         input_item.always_execute = False
 
