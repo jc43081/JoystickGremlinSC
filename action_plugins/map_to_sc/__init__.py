@@ -180,8 +180,7 @@ class MapToScWidget(gremlin.ui.input_item.AbstractActionWidget):
                 "not what has been specified."
             )
             log_sys_error(str(e))
-        
-
+    
     def save_controls_changes(self):
         """Saves UI contents to the profile data storage."""
         gremlin.util.log("MapToScWidget::save controls changes " + time.strftime("%a, %d %b %Y %H:%M:%S"))
@@ -465,6 +464,12 @@ class MapToSc(gremlin.base_profile.AbstractAction):
             el = gremlin.event_handler.EventListener()
             el.action_description_changed.emit()
     
+    def display_name(self):
+        ''' returns a display string for the current configuration '''
+        category_entry = next((x for x in self.controls_list if x["category_id"] == self.category_id), None) 
+        control_entry = next((x for x in category_entry["values"] if x["id"] == self.control_id), None)
+        return f"Category: {category_entry["name"]}, Control: {control_entry["name"]}"
+
 
     def icon(self):
         """Returns the icon corresponding to the remapped input.
@@ -580,6 +585,13 @@ class ScControlsSelector(QtWidgets.QWidget):
 
         self._create_controls_dropdown()
 
+    def get_category_control_info(self, category_id, control_id):
+        # Finally get the selected control from the controls list
+        category_entry = next((x for x in self.controls_list if x["category_id"] == category_id), None) 
+        control_entry = next((x for x in category_entry["values"] if x["id"] == control_id), None) 
+        return {"category_entry": category_entry,
+                "control_entry": control_entry}
+
     def get_selection(self):
         gremlin.util.log("ControlsSelector::get selection: " + time.strftime("%a, %d %b %Y %H:%M:%S"))
         category_id = None
@@ -596,9 +608,10 @@ class ScControlsSelector(QtWidgets.QWidget):
         if control_index < 0: control_index = 0
         control_id = category_control_list["values"][control_index]
 
+        
         # Finally get the selected control from the controls list
         category_entry = next((x for x in self.controls_list if x["category_id"] == category_id), None) 
-        control_entry = next((x for x in category_entry["values"] if x["id"] == control_id), None)  
+        control_entry = next((x for x in category_entry["values"] if x["id"] == control_id), None) 
 
         # vJoy fields will be obtained on the fly from the Control Mapping
                  

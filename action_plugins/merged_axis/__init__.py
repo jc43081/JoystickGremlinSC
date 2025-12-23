@@ -518,15 +518,15 @@ class MergedAxis(gremlin.base_profile.AbstractAction):
 
 
         # container holder for this action
-        current_item_data = gremlin.profile._get_input_item(self)
-        item_data = gremlin.profile.InputItem()
+        current_item_data = gremlin.base_profile._get_input_item(self)
+        item_data = gremlin.base_profile.InputItem()
         item_data._input_type = current_item_data._input_type
         item_data._device_guid = current_item_data._device_guid
         item_data._input_id = current_item_data._input_id
         item_data._is_action = True
         item_data._profile_mode = current_item_data._profile_mode
         item_data._device_name = current_item_data._device_name
-        self.item_data : gremlin.profile.InputItem = item_data
+        self.item_data : gremlin.base_profile.InputItem = item_data
 
 
 

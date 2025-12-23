@@ -459,18 +459,19 @@ class ViewInput(QtWidgets.QDialog):
         self.option_container_layout.addWidget(QtWidgets.QLabel("Display Mode:"))
         self.option_container_layout.addWidget(self.cb_display_by_device_widget)
         self.option_container_layout.addWidget(self.cb_display_by_mode_widget)
-        self.option_container_layout.addWidget(self.cb_display_by_mode_widget)
         self.option_container_layout.addWidget(self.to_clipboard_widget)
         self.option_container_layout.addStretch()
 
 
         self._map_data = map_data
         self._tree_widget = QtWidgets.QTreeWidget()
-        self._tree_widget.setColumnCount(2)
-        self._tree_widget.setHeaderLabels(["Mapping", "Value"])
+        self._tree_widget.setColumnCount(3)
+        self._tree_widget.setHeaderLabels(["Mapping", "Control", "Value"])
         header = self._tree_widget.header()
         header.setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeMode.ResizeToContents)
-        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeMode.Stretch)
+        header.setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeMode.Interactive)
+        header.setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeMode.Interactive)
+
         
 
         self.main_layout = QtWidgets.QVBoxLayout(self)
@@ -487,7 +488,7 @@ class ViewInput(QtWidgets.QDialog):
 
     QtCore.Slot()
     def _mode_by_mode_cb(self):
-        if self.cb_display_by_device_widget.isChecked():
+        if self.cb_display_by_mode_widget.isChecked():
             self._display_mode = ViewInputMode.Mode
             self._update()
 
@@ -505,7 +506,7 @@ class ViewInput(QtWidgets.QDialog):
             while parent:
                 depth +=1
                 parent = parent.parent()
-            text = f"{'\t'*depth if depth else ''}{item.text(0)} {item.text(1)}\n"
+            text = f"{'\t'*depth if depth else ''}{item.text(0)} - {item.text(1)} -> {item.text(2)}\n"
             lines.append(text)
             it+=1
     
@@ -547,7 +548,7 @@ class ViewInput(QtWidgets.QDialog):
                             for container in entry.input_item.containers:
                                 for action_set in container.action_sets:
                                     for action in action_set:
-                                        action_node = QtWidgets.QTreeWidgetItem([action.name, action.display_name()])
+                                        action_node = QtWidgets.QTreeWidgetItem([action.name, action.input_item.display_name, action.display_name()])
                                         device_node.addChild(action_node)
                             has_containers = True
 
@@ -575,7 +576,7 @@ class ViewInput(QtWidgets.QDialog):
                             for container in entry.input_item.containers:
                                 for action_set in container.action_sets:
                                     for action in action_set:
-                                        action_node = QtWidgets.QTreeWidgetItem([action.name, action.display_name()])
+                                        action_node = QtWidgets.QTreeWidgetItem([action.name, action.input_item.display_name, action.display_name()])
                                         mode_node.addChild(action_node)
                             has_containers = True
 

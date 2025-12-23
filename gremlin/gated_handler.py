@@ -22,7 +22,7 @@ import os
 from lxml import etree as ElementTree
 from PySide6 import QtWidgets, QtCore, QtGui
 
-import gremlin.profile
+import gremlin.base_profile
 import gremlin.config
 import gremlin.event_handler
 import gremlin.execution_graph
@@ -1822,12 +1822,12 @@ class GateData():
 
         
     def _find_input_item(self):
-        return gremlin.profile._get_input_item(self._action_data)
+        return gremlin.base_profile._get_input_item(self._action_data)
 
     def _new_item_data(self, is_action = True):
         ''' creates a new item data from the existing one '''
         current_item_data = self._find_input_item()
-        item_data = gremlin.profile.InputItem()
+        item_data = gremlin.base_profile.InputItem()
         item_data._input_type = current_item_data._input_type
         item_data._device_guid = current_item_data._device_guid
         item_data._input_id = current_item_data._input_id

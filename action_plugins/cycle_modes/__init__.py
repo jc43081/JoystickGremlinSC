@@ -40,7 +40,7 @@ class CycleModesWidget(gremlin.ui.input_item.AbstractActionWidget):
 
         from gremlin.util import load_icon
 
-        from gremlin.common import load_icon
+        #from gremlin.common import load_icon
 
         if CycleModesWidget.locked:
             return
