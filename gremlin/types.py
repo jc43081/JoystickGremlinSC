@@ -108,7 +108,7 @@ _AxisNames_to_enum_lookup = {
     "Y Rotation (5)": AxisNames.RY,
     "Z Rotation (6)": AxisNames.RZ,
     "Slider (7)": AxisNames.SLIDER,
-    "Dial (9)": AxisNames.DIAL
+    "Dial (8)": AxisNames.DIAL
 }
 
 

@@ -22,8 +22,6 @@ import os
 from typing import Optional
 import logging
 from PySide6 import QtWidgets, QtCore, QtGui
-import PySide6.QtGui
-import PySide6.QtWidgets
 import gremlin.config
 import gremlin.error
 import qtawesome as qta
