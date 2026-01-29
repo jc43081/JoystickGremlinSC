@@ -79,7 +79,7 @@ install_path = os.path.normcase(os.path.dirname(os.path.abspath(sys.argv[0])))
 os.chdir(install_path)
 
 APPLICATION_NAME = "Joystick Gremlin SC"
-APPLICATION_VERSION = "13.40.14-sc.4"
+APPLICATION_VERSION = "13.40.14-sc.5"
 
 from gremlin.singleton_decorator import SingletonDecorator
 

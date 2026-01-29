@@ -65,7 +65,7 @@ class ScVjoyMapperUI(gremlin.ui.ui_common.BaseDialogUi):
         self.vjoy_ordering_textbox.setFixedWidth(100)
         self.vjoy_ordering_textbox.textEdited.connect(self._update_vjoy_ordering)
         vjoy_ordering_edit.addWidget(self.vjoy_ordering_textbox)
-        vjoy_ordering_edit.addWidget(QtWidgets.QLabel("(Enter 5 numbers (1-5) separated by commas)"))
+        vjoy_ordering_edit.addWidget(QtWidgets.QLabel("(Enter up to 8 numbers separated by commas - based on # of Vjoys used)"))
 
         vjoy_ordering_layout = QtWidgets.QFormLayout()
         vjoy_ordering_layout.addRow(vjoy_ordering_labels, vjoy_ordering_edit)
@@ -109,7 +109,7 @@ class ScVjoyMapperUI(gremlin.ui.ui_common.BaseDialogUi):
         instruction_button = QtWidgets.QPushButton("6. Click HERE to run Mapper")
         instruction_button.clicked.connect(self._run_sc_mapper)
         instruction_layout.addWidget(instruction_button)
-        instruction_layout.addWidget(QtWidgets.QLabel("WARNING: 4.0.x fails to import MFD bindings through the UI.\nUse the following command (press `) to import: 'pp_RebindKeys layout_JG_StarCitizenMapping_4-0-x_layout'\n"))
+        instruction_layout.addWidget(QtWidgets.QLabel("WARNING: 4.x.x fails to import MFD bindings through the UI.\nUse the following command (press `) to import: 'pp_RebindKeys layout_JG_StarCitizenMapping_4-x-x_layout'\n"))
         self.main_layout.addLayout(instruction_layout)
 
 
@@ -152,8 +152,8 @@ class ScVjoyMapperUI(gremlin.ui.ui_common.BaseDialogUi):
         self.logger.debug(f"SC Installation: {self.sc_installation}")
 
         vjoy_order = self.vjoy_ordering.split(",")
-        if self._match(self.vjoy_ordering) == False or len(vjoy_order) != 5:
-            gremlin.util.display_error("vJoy Order must have 5 numbers (1-8) separated by commas")
+        if self._match(self.vjoy_ordering) == False or len(vjoy_order) > 8:
+            gremlin.util.display_error("vJoy Order can't have more than 8 numbers (1-8) separated by commas")
             return
 
         if os.path.exists(self.base_control_profile) == False or self.base_control_profile.endswith(".xml") == False:
