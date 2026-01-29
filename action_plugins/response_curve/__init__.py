@@ -1338,16 +1338,9 @@ class ResponseCurveWidget(gremlin.ui.input_item.AbstractActionWidget):
 
         # Update curve settings UI
         if self.action_data.mapping_type == "cubic-spline":
-            if self.handle_symmetry is not None:
-                self.handle_symmetry.setVisible(False)
-                self.handle_symmetry = None
+            self.handle_symmetry.setVisible(False)
         elif self.action_data.mapping_type == "cubic-bezier-spline":
             self.handle_symmetry.setVisible(True)
-            self.handle_symmetry.stateChanged.connect(
-                self._handle_symmetry_cb
-            )
-            
-        self.curve_symmetry.setChecked(False)
 
         # Recreate the UI components
         self.curve_scene = CurveView(
