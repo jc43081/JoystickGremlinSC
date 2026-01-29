@@ -284,14 +284,15 @@ class MapToScFunctor(gremlin.base_classes.AbstractFunctor):
             eh.runtime_mode_changed.connect(self._mode_changed_cb)                
 
     def _mode_changed_cb(self):
-            current_joy_value = self.joy.axis(self.hardware_input_id).value
-            el = gremlin.event_handler.EventListener()            
-            el.joystick_event.emit(gremlin.event_handler.Event(
-                    event_type=InputType.JoystickAxis,
-                    device_guid=self.device_guid,
-                    identifier=self.hardware_input_id,
-                    value=current_joy_value
-                ))            
+            if self.joy is not None:
+                current_joy_value = self.joy.axis(self.hardware_input_id).value
+                el = gremlin.event_handler.EventListener()            
+                el.joystick_event.emit(gremlin.event_handler.Event(
+                        event_type=InputType.JoystickAxis,
+                        device_guid=self.device_guid,
+                        identifier=self.hardware_input_id,
+                        value=current_joy_value
+                    ))            
 
 
     def process_event(self, event, value):
