@@ -1,3 +1,6 @@
+***Notice: Given the rapid advance of Gremlin EX and a new version of Joystick Gremlin, this fork is no longer moving forward. The recommendation is to explore Joystick Gremlin v14+ and its Logical Device which appears to be able to achieve much of the same functionality.***
+
+
 Joystick Gremlin SC - 13.40.14-sc.5
 ================
 
