@@ -1,0 +1,32 @@
+<ActionMaps version="1" optionsVersion="2" rebindVersion="2" profileName="JG_StarCitizenMapping_3-24-2">
+ <CustomisationUIHeader label="JG_StarCitizenMapping" description="" image="">
+  <devices>
+    <joystick instance="1"/>
+    <joystick instance="2"/>
+    <joystick instance="3"/>
+    <joystick instance="4"/>
+    <joystick instance="5"/>
+   </devices>
+   <categories>
+    <category label="@ui_CCSeatGeneral"/>
+    <category label="@ui_CCSpaceFlight"/>
+    <category label=""/>
+    <category label="@ui_CCTurrets"/>
+    <category label="@ui_CGLightControllerDesc"/>
+    <category label="@ui_CCFPS"/>
+    <category label="@ui_CCEVA"/>
+    <category label="@ui_CCVehicle"/>
+    <category label="@ui_CGEASpectator"/>
+    <category label="@ui_CGUIGeneral"/>
+    <category label="@ui_CGOpticalTracking"/>
+    <category label="@ui_CGInteraction"/>
+    <category label="@ui_CCCamera"/>
+   </categories>
+ </CustomisationUIHeader>
+ <options type="joystick" instance="1" Product="vJoy Device  {BEAD1234-0000-0000-0000-504944564944}"/>
+ <options type="joystick" instance="2" Product="vJoy Device  {BEAD1234-0000-0000-0000-504944564944}"/>
+ <options type="joystick" instance="3" Product="vJoy Device  {BEAD1234-0000-0000-0000-504944564944}"/>
+ <options type="joystick" instance="4" Product="vJoy Device  {BEAD1234-0000-0000-0000-504944564944}"/>
+ <options type="joystick" instance="5" Product="vJoy Device  {BEAD1234-0000-0000-0000-504944564944}"/>
+ <modifiers />
+</ActionMaps>
